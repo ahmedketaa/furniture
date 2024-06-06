@@ -1,2 +1,2 @@
-var x =15;
-const y="keta"
+var x = 15;
+const y = "keta";

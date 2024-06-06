@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="register-div">
+      <form class="register-form" action="" method="get">
+        <label id="fullnametext">Full Name:</label>
+        <input
+          type="text"
+          name="fName"
+          id="fullName"
+          required
+          placeholder="Enter your Name"
+          onblur="validation(this)"
+          pattern="[A-Za-z]{3,}"
+        />
+        <br />
+        <label>Email:</label>
+        <input
+          type="email"
+          name="eMail"
+          required
+          placeholder="Enter your email"
+        /><br />
+        <label>Password:</label>
+        <input
+          type="password"
+          name="pword"
+          required
+          placeholder="Enter your password"
+        /><br />
+        <label>Re-Enter your Password:</label>
+        <input
+          type="password"
+          name="rePword"
+          required
+          placeholder="Re-Enter your password"
+        /><br />
+
+        <label>Role:</label>
+        <select id="role" name="role">
+          <option selected disabled>Select Your Role:</option>
+          <option>Admin</option>
+          <option>User</option></select
+        ><br /><br />
+        <input
+          type="checkbox"
+          name="checkbox"
+          style="display: inline-block"
+          required
+        />
+        <label>I accept the terms and conditions </label><br /><br />
+        <button type="submit" id="submit">Register</button>
+      </form>
+    </div>
+  </body>
+</html>

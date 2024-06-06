@@ -1,0 +1,10 @@
+
+.register-div{
+    height: 100vh;
+    background-color: #EEEEEE;
+    text-align: center;
+}
+
+.register-form{
+    display: inline-block;
+}
