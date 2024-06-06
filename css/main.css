@@ -1,5 +1,290 @@
-.box{
-    width: 110px;
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Header Styles */
+  .hero {
+    background-image: url('../assets/landing-image.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+  
+  .navbar a {
+    color: white; 
+    margin: 0 10px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-left a {
+    font-weight: 600;
+  }
+  
+  .navbar-left ul {
+    display: flex;
+  }
+  
+  .logo-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px ;
+  }
+  
+  .logo-div h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #ab811e;
+    font-family: cursive;
+  }
+  
+  .logo {
+    width: 50px; 
+    margin-bottom: 0;
+  }
+  
+  /* Right side of nav */
+  .navbar-right {
+    display: flex;
+    margin-right: 25px;
+  }
+  
+  .navbar-right a {
+    margin-left: 20px;
+  }
+  
+  .navbar-right a i {
+    color: white;
+  }
+  
+  /* Entire landing content */
+  .content-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 35%;
+    gap: 10px;
+    text-align: center;
+   
+  }
+  
+  .content-div h2 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .content-div p {
+    text-align: center;
+    color: white;
+  }
+  
+  .main_button {
+    padding: 15px 40px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    justify-content: space-between;
+    gap: 10px;  
+    transition: .3s;
+  }
+  .main_button:hover .btnArrow{
+    transform: translateX(10px)
+}
+.main_button:hover{
+    color: #f7eaea;
+    border: 1px solid rgba(255, 255, 255, 0.482);
+
+}
+  .btnArrow{
+    margin-left: 10px;
+    transition: .3s;
+  }
+
+  /* end of header */
+
+  /* section product of the week */
+.products_of_week{
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.product_of_week_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 100px 0;
+}
+.gallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 15px; */
+}
+.product_of_week_container .text{
+    width: 40%;
+    margin-bottom: 20px;
+}
+.main_title{
+    font-size: 2.3rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+.section_caption{
+    color: #777;
+    line-height: 1.2;
+}
+.box .image{
+    width: 90%;
     position: relative;
-    background: #000;
+}
+.box_image{
+    max-width: 100%;
+    border-radius: 10px;
+}
+.box_title{
+    margin: 5px 0;
+    font-size: 18px;
+}
+.box_price{
+    color: #777;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+  /*End section product of the week */
+
+  /* start second section */
+  .second_section_content{
+    height: 50vh;
+    background-image: url('../assets/Rectangle8.png');
+    background-size: contain;
+    
+  }
+  .second_section_content .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    float: right;
+    width: 30%;
+    margin-right: 5%;
+    margin-top: 50px;
+    
+  }
+  .second_section_content .content p{
+    color: white;
+    line-height: 1.7;
+  }
+  .second_section_image{
+    background-image: url('../assets/Rectangle10.png');
+    background-size: cover;
+    height: 70vh;
+  }
+/* End second section */
+
+/* start chairs section */
+.chairs_section{
+    margin: 100px 0;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.chair_image img{
+    width: 95%;
+}
+.chair_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+.chair_text .section_caption{
+    width: 50%;
+}
+.section_button{
+    padding: 15px 40px;
+    border: none;
+    background-color: transparent;
+    border: 1.5px solid #272727;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    justify-content: space-between;
+    gap: 10px; 
+    transition: .3s;
+}
+.section_button:hover{
+    color: #5b4141;
+    border: 1px solid #2727276b;
+
+}
+.section_button:hover .btnArrow{
+    transform: translateX(10px)
+}
+/* start order now section */
+.order_now{
+    margin: 100px 0;
+    background-color: #EFEFEF;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    font-size: 22px;
+}
+.order_now .special_span{
+    font-weight: bold;
 }

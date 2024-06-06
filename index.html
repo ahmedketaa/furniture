@@ -1,21 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture</title>
+    <title>EL Domayti</title>
     <link rel="stylesheet" href="./css/main.css">
+    <!-- Awesome fotns library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="./css/normaliz.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
 </head>
+
 <body>
-    <section>
-            
-        <p>Session Will Start on <time datetime="2024-06-30">June 30, 2024</time>.</p>
-        <p>Progress of the task:
-             <progress value="70" max="100"></progress>
+    <header class="hero">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="logo-div">
+                    <img src="./assets/logo.png" alt="Logo" class="logo">
+                    <h3>EL Domayti</h3>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <a href="#"><i class="fas fa-shopping-cart"></i></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-bars"></i></a>
+            </div>
+        </nav>
+        <!-- end nav ya rayk -->
+        <div class="content-div">
+            <h2>All for your home</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor odio odio malesuada at
+                condimentum adipiscing iaculis semper.
             </p>
-        <p>Volume: <meter value="0.7" min="0" max="1" low=".3" high=".9"></meter>
-        <p><mark>Highlighted</mark> text
-    </section>
-<script src="./js/main.js"></script>
+            <button class="main_button">View More
+                <svg class="btnArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none">
+                    <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" stroke="white"
+                        stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main>
+        <!-- start section one -->
+        <section class="products_of_week">
+            <div class="product_of_week_container">
+                <div class="text">
+                    <h3 class="main_title">
+                        Products of the week
+                    </h3>
+                    <p class="section_caption">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor odio odio malesuada at
+                        condimentum adipiscing iaculis semper.
+                    </p>
+                </div>
+                <div class="gallery">
+                    <div class="box">
+                        <div class="image">
+                            <img class="box_image" src="./assets/Rectangle6.png" alt="">
+                        </div>
+                        <h5 class="box_title">
+                            pot
+                        </h5>
+                        <span class="box_price">
+                            $ 223,00
+                        </span>
+                    </div>
+                    <div class="box">
+                        <div class="image">
+                            <img class="box_image" src="./assets/Rectangle5.png" alt="">
+                        </div>
+                        <h5 class="box_title">
+                            chair
+                        </h5>
+                        <span class="box_price">
+                            $ 250,00
+                        </span>
+                    </div>
+                    <div class="box">
+                        <div class="image">
+                            <img class="box_image" src="./assets/Rectangle7.png" alt="">
+                        </div>
+                        <h5 class="box_title">
+                            Lamp
+                        </h5>
+                        <span class="box_price">
+                            $ 200,00
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section one -->
+
+        <!-- start section Two -->
+        <section class="second_section">
+            <div class="second_section_content">
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ipsum est incidunt eveniet
+                        autem eligendi.
+                    </p>
+                    <div class="main_button">
+                        View More
+                        <svg class="btnArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none">
+                            <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" stroke="white"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="second_section_image">
+                <!-- only put the bg-image in css -->
+            </div>
+        </section>
+        <!-- start chairs section -->
+        <section class="chairs_section">
+
+            <div class="chair_text">
+                <h3 class="main_title">
+                    stylish chairs
+                </h3>
+                <p class="section_caption">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor odio odio malesuada at
+                    condimentum adipiscing iaculis semper.
+                </p>
+                <div class="section_button">
+                    View More
+                    <svg class="btnArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none">
+                        <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" stroke="black"
+                            stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="chair_image">
+                <img src="./assets/Rectangle11.png" alt="">
+            </div>
+        </section>
+        <!-- start table section -->
+        <section class="chairs_section">
+            <div class="chair_image">
+                <img src="./assets/Rectangle13.png" alt="">
+            </div>
+            <div class="chair_text">
+                <h3 class="main_title">
+                    Table
+                </h3>
+                <p class="section_caption">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor odio odio malesuada at
+                    condimentum adipiscing iaculis semper.
+                </p>
+                <div class="section_button">
+                    View More
+                    <svg class="btnArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none">
+                        <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" stroke="black"
+                            stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+
+        </section>
+        <!-- start Lamp section -->
+        <section class="chairs_section">
+            <div class="chair_text">
+                <h3 class="main_title">
+                    contemporary lamps
+                </h3>
+                <p class="section_caption">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor odio odio malesuada at
+                    condimentum adipiscing iaculis semper.
+                </p>
+                <div class="section_button">
+                    View More
+                    <svg class="btnArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none">
+                        <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" stroke="black"
+                            stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="chair_image">
+                <img src="./assets/Rectangle15.png" alt="">
+            </div>
+        </section>
+        <!-- start order now section -->
+        <section class="order_now">
+            <p>
+                order now for an <span class="special_span">express delivery in 24h !</span>
+            </p>
+            <button class="section_button">
+                View More
+                <svg class="btnArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none">
+                        <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" stroke="black"
+                            stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+            </button>
+        </section>
+    </main>
 </body>
+
 </html>
