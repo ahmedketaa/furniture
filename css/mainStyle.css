@@ -1,0 +1,153 @@
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Product Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: black;
+  background-color: #fff;
+}
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+header {
+  background-color: #3333;
+  padding: 20px;
+  height: 40vh;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/media/images/cab38557e90888f3ad44d6477138f95b.jpeg);
+}
+
+form {
+  padding-top: 20px;
+  display: grid;
+  width: 80%;
+  padding-left: 50px;
+}
+form input {
+  padding: 14px;
+  margin: 5px 0;
+  border: 1px solid #9f9f9f;
+  border-radius: 4px;
+  width: 70%;
+}
+label {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 16px;
+}
+form h1 {
+  margin: 0;
+  font-size: xx-large;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.cardPrice {
+  width: 100%;
+  font-size: 16px;
+  color: black;
+  background-color: #fff;
+  padding-top: 120px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+
+.cardPrice p,
+h2 {
+  padding-bottom: 20px;
+}
+.cardPrice h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.inp {
+  display: flex;
+  padding-top: 30px;
+}
+.place_order_btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.place_order_btn button {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border: solid 1px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.place_order_btn :hover{
+    background-color: rgb(245, 180, 16,0.5);
+}
+.place_order_btn  :active{
+    background-color: rgb(245, 180, 16,0.5);
+}
+.place_order_btn  :focus{
+    background-color: rgb(245, 180, 16,0.5);
+}
+hr {
+  width: 65%;
+  margin: 0 auto;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+.check_circle {
+  line-height: 1.9;
+  padding-bottom: 20px;
+}
+.check_circle input {
+  border-color: #9f9f9f;
+}
+.check_circle label {
+  font-size: 14px;
+  font-weight: 100;
+  color: #9f9f9f;
+}
+.secound_side {
+  padding-left: 100px;
+  padding-top: 20px;
+}
+.secound_side p {
+  line-height: 1.9;
+  color: #9f9f9f;
+  font-size: 12px;
+  word-spacing: 2px;
+  padding-bottom: 20px;
+}
+.secound_side h5 {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.secund_p {
+  line-height: 1.9;
+}

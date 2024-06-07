@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/normaliz.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav></nav>
+
+        <div>
+            <h1>
+                check out
+            </h1>
+
+        </div>
+
+    </header>
+
+    <div class="container">
+        <div class="container">
+            <form id="billing_form" action="">
+                <h1>Billing details</h1>
+                <!-- <div class="inp"> -->
+
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" required>
+                <div class="error" id="first_name_error"></div>
+
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" required>
+                <div class="error" id="last_name_error"></div>
+
+                <!-- </div> -->
+                <label for="company">Company Name (Optional)</label>
+                <input type="text" name="company" id="company">
+                <div class="error" id="company_error"></div>
+                <label for="country">Country / Region</label>
+                <input type="text" name="country" id="country" required>
+                <div class="error" id="country_error"></div>
+                <label for="street">Street Address</label>
+                <input type="text" name="street" id="street" required>
+                <div class="error" id="street_error"></div>
+
+
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" required>
+                <div class="error" id="city_error"></div>
+
+                <label for="state">State</label>
+                <input type="text" name="state" id="state" required>
+                <div class="error" id="state_error"></div>
+
+
+                <label for="zip">Postal</label>
+                <input type="text" name="zip" id="zip" required>
+                <div class="error" id="zip_error"></div>
+
+
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" required>
+                <div class="error" id="phone_error"></div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+                <div class="error" id="email_error"></div>
+                <label for="more_info">Additional Information</label>
+                <input type="text" name="addInfo" id="more_info" placeholder="Enter additional information">
+                <div class="error" id="more_info_error"></div>
+
+            </form>
+        </div>
+
+        <div style="width: 100%;" class="">
+            <div class="cardPrice">
+                <div>
+                    <h2>product</h2>
+                    <p>Subtotal</p>
+                    <p>product price</p>
+                    <p>total price</p>
+                </div>
+                <div>
+                    <h2>Subtotal</h2>
+                    <p>Rs. 250,000.00</p>
+                    <p>Rs. 250,000.00</p>
+                    <p style="color: rgb(199, 144, 6); font-weight: 600;">Rs. 250,000.00</p>
+                </div>
+            </div>
+            <hr>
+            <div class="secound_side" ">
+            <div style="display: flex;align-items: center; padding-left: 17px;">
+                <span style="padding-right:13px ;">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="7" fill="black"/>
+                        </svg>
+                        
+                </span>
+                <span>
+                    <h5>Direct Bank Transfer</h5>
+                </span>
+            </div>
+                <div class="description_sec" style="padding-left: 17px;">
+                    <p>
+                        Make your payment directly into our bank account. Please use <br> your Order ID as the payment
+                        reference. Your order will <br> not be shipped until the funds have cleared in our account.
+                    </p>
+                   <div class=" check_circle">
+                <div>
+                    <input type="radio" name="pay_way" id="pay_way" required>
+                    <label for="check_box">Direct Bank Transfer</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="pay_way" id="pay_way" required>
+                    <label for="check_box">Cash On Delivery</label>
+                </div>
+
+            </div>
+
+            <div class="secund_p">
+                Your personal data will be used to support your experience <br> throughout this website, to manage
+                access to
+                your account,<br> and for other purposes described in our <b style="font-weight: 608;">privacy policy.</b>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="place_order_btn"><button type="submit">place order</button></div>
+    </div>
+
+
+
+    </div>
+    <script src="/js/test.js"></script>
+</body>
+
+</html>
