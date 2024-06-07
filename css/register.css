@@ -1,10 +1,19 @@
-
-.register-div{
+.register_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;
-    background-color: #EEEEEE;
-    text-align: center;
 }
 
-.register-form{
-    display: inline-block;
+
+.register_form{
+    display: flex;
+    flex-direction:column ; 
+    justify-content: center;
+    width: 50%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
 }
