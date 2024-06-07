@@ -106,7 +106,7 @@ function validateCheckoutForm() {
     checkCVV(cvv);
 
     // Prevent form submission if there are errors
-    const formControls = document.querySelectorAll('.form-control');
+    const formControls = document.querySelectorAll('billing_form');
     let isFormValid = true;
     formControls.forEach(formControl => {
         if(formControl.classList.contains('error')) {
