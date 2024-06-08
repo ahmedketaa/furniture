@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             `;
         }
-    //  <button class="product-details"  onClick="displayProductDetails(${product.id})">Product Details</button>
 
         productsContainer.innerHTML = cartona;
     
@@ -82,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
     
     // Function to display latest products
     function displayLatestProducts() {
