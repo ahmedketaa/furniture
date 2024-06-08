@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             `;
         }
-
+    
         productsContainer.innerHTML = cartona;
         setTimeout(() => {
             document.querySelectorAll('.product').forEach((product, index) => {
