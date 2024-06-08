@@ -162,10 +162,10 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 15px; */
+    gap: 15px;
 }
 .product_of_week_container .text{
-    width: 40%;
+    width: 50%;
     margin-bottom: 20px;
 }
 .main_title{
@@ -178,7 +178,7 @@ body, html {
     line-height: 1.2;
 }
 .box .image{
-    width: 90%;
+    width: 100%;
     position: relative;
 }
 .box_image{

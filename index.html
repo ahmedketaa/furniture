@@ -72,18 +72,8 @@
                         condimentum adipiscing iaculis semper.
                     </p>
                 </div>
-                <div class="gallery">
-                    <div class="box">
-                        <div class="image">
-                            <img class="box_image" src="./assets/Rectangle6.png" alt="">
-                        </div>
-                        <h5 class="box_title">
-                            pot
-                        </h5>
-                        <span class="box_price">
-                            $ 223,00
-                        </span>
-                    </div>
+                <div class="gallery" id="latestPriducts">
+                    
                     <div class="box">
                         <div class="image">
                             <img class="box_image" src="./assets/Rectangle5.png" alt="">
@@ -309,5 +299,31 @@
             <p>&copy; 2024 EL Domayti. All Rights Reserved.</p>
         </div>
     </footer>
-</body>
+    <script type="module">
+        import { getLatestProducts } from "./js/productOperations.js";
+        const latest = getLatestProducts();
+            function displayLatestProducts(){
+                console.log(latest);
+                var cartona='';
+                for (let i = 0; i < latest.length; i++) {
+                    cartona+=
+                    `
+                    <div class="box">
+                        <div class="image">
+                            <img class="box_image" src="${latest[i].image?latest[i].image:""}" alt="">
+                        </div>
+                        <h5 class="box_title">
+                            ${latest[i].name}
+                        </h5>
+                        <span class="box_price">
+                            ${latest[i].price}$
+                        </span>
+                    </div>
+                    `
+                    
+                }
+                document.getElementById("latestPriducts").innerHTML=cartona;
+            }
+            displayLatestProducts()
+    </script></body>
 </html>

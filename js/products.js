@@ -15,6 +15,7 @@ export function loadProducts() {
         return JSON.parse(productsJSON);
     }
     return [
+
         { id: 1, name: 'Modern Sofa', category: 'Living Room', price: 250, status: "available", image: './assets/Rectangle26.png', description: 'A sleek and comfortable modern sofa perfect for your living room.' },
         { id: 2, name: 'Dining Table', category: 'Dining Room', price: 300, status: "available", image: './assets/Rectangle27.png', description: 'A sturdy dining table ideal for family gatherings and dinner parties.' },
         { id: 3, name: 'Lamp', category: 'Decorative', price: 100, status: "available", image: './assets/Rectangle28.png', description: 'An elegant lamp to brighten up any room with style.' },
@@ -34,3 +35,6 @@ export function loadProducts() {
     
     
 }
+
+
+
