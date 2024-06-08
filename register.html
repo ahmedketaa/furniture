@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="register_div">
+      <div class="container">
+        <form id="register_form" class="register_form" method="post">
+          <div class="fullname">
+            <label id="fullnametext">Full Name:</label>
+            <input
+              type="text"
+              name="fName"
+              id="fullName"
+              placeholder="Enter your Name"
+              pattern="[A-Za-z]{3,}"
+            />
+
+            <span></span>
+            <br />
+            <label>Email:</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+            <span></span>
+            <br />
+            <label>Password:</label>
+            <input
+              id="password"
+              type="password"
+              name="pword"
+              placeholder="Enter your password"
+            />
+            <span></span>
+            <br />
+            <label>Re-Enter your Password:</label>
+            <input
+              id="re_passowrd"
+              type="password"
+              name="rePword"
+              placeholder="Re-Enter your password"
+            />
+            <span></span>
+            <br />
+
+            <label>Role:</label>
+            <select id="role" name="role">
+              <option selected disabled>Select Your Role:</option>
+              <option>Admin</option>
+              <option>User</option>
+            </select>
+            <span></span>
+            <br />
+          </div>
+          <button type="submit" id="submit">Register</button>
+        </form>
+      </div>
+    </div>
+    <script src="./js/register.js" type="module"></script>
+  </body>
+</html>

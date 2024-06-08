@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login_form" method="post">
+      <form id="login_form" class="register_form" method="post">
+        <label>Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+        <span></span>
+        <br />
+        <label>Password:</label>
+        <input
+          id="password"
+          type="password"
+          name="pword"
+          placeholder="Enter your password"
+        />
+        <span></span>
+        <br />
+        <button type="submit" id="submit">login</button>
+        <span id="login_error"></span>
+      </form>
+    </div>
+    <script src="./js/login.js" type="module"></script>
+  </body>
+</html>
