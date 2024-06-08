@@ -11,14 +11,14 @@ const cvv = document.getElementById('cvv');
 
 function showError(input, message) {
     const formControl = input.parentElement;
-    formControl.className = 'form-control error';
+    formControl.className = 'billing_form error';
     const small = formControl.querySelector('small');
     small.innerText = message;
 }
 
 function showSuccess(input) {
     const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+    formControl.className = 'billing_form success';
 }
 
 function isValidEmail(email) {

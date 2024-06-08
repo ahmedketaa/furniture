@@ -1,3 +1,4 @@
+
 ul {
     list-style: none;
   }
@@ -18,6 +19,7 @@ ul {
     align-items: center;
     flex-direction: column;
   }
+ 
   .hero h1{
     font-size: 200px;
   }
@@ -29,6 +31,7 @@ ul {
     width: 100%;
     position: absolute;
     top: 0;
+
   }
   
   .navbar a {
@@ -36,20 +39,20 @@ ul {
     margin: 0 10px;
   }
   
-  .navbar-left {
+  .navbar_left {
     display: flex;
     align-items: center;
   }
   
-  .navbar-left a {
+  .navbar_left a {
     font-weight: 600;
   }
   
-  .navbar-left ul {
+  .navbar_left ul {
     display: flex;
   }
   
-  .logo-div {
+  .logo_div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,11 +60,12 @@ ul {
     margin: 10px ;
   }
   
-  .logo-div h3 {
+  .logo_div h3 {
     margin: 0;
     font-size: 16px;
     color: #ab811e;
-    font-family: cursive;
+    font-family: "Poppins", sans-serif;
+
   }
   
   .logo {
@@ -70,15 +74,19 @@ ul {
   }
   
   /* Right side of nav */
-  .navbar-right {
+  .navbar_right {
     display: flex;
     margin-right: 25px;
   }
   
-  .navbar-right a {
+  .navbar_right a {
     margin-left: 20px;
   }
   
-  .navbar-right a i {
+  .navbar_right a i {
     color: white;
+  }
+.navbar a:hover{
+    color: #ab811e;
+
   }

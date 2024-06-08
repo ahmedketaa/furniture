@@ -4,163 +4,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="/css/normaliz.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/contactStyle.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+    <link rel="stylesheet" href="/css/footter.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/css/mainStyle.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-    <link rel="stylesheet" href="/css/normaliz.css">
-    <link rel="stylesheet" href="/css/all.min.css">
-    <link rel="stylesheet" href="/css/navBar.css">
-    <link rel="shortcut icon" href="/media/assets/Meubel House_Logos-05.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/footter.css">
-
-    <title>EL Dumyaty</title>
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar_left">
+            <div class="logo_div">
+                <img src="/media/assets/Meubel House_Logos-05.png" alt="Logo" class="logo">
+                <h3>EL-DOMIATY.</h3>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar_right">
+            <a href="#"><i class="fas fa-shopping-cart"></i></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+    <header>
+        <img src="/media/assets/Meubel House_Logos-05.png" alt="">
+        <div class="head_content">
 
-    <header class="hero">
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="navbar_left">
-                <div class="logo_div">
-                    <img src="/media/assets/Meubel House_Logos-05.png" alt="Logo" class="logo">
-                    <h3>EL-DOMIATY.</h3>
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Shop</a>
-                    </li>
-                    <li>
-                        <a href="#">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar_right">
-                <a href="#"><i class="fas fa-shopping-cart"></i></i></a>
-                <a href="#"><i class="fas fa-user"></i></a>
-                <a href="#"><i class="fas fa-bars"></i></a>
-            </div>
-        </nav>
-        <h1>check out</h1>
+            <h1>
+                Contact
+            </h1>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="container">
-            <form id="billing_form" action="">
-                <h1>Billing details</h1>
-                <!-- <div class="inp"> -->
+    <div class="contact_description">
+        <h1>
+            Get In Touch With Us
+        </h1>
+        <p>
+            For More Information About Our Product & Services. Please Feel Free
+            To Drop<br> Us An Email. Our Staff Always Be
+            There To Help You Out. Do Not Hesitate!
+        </p>
 
-                <label for="first_name">First Name</label>
-                <input type="text" name="first_name" id="first_name" required>
-                <div class="error" id="first_name_error"></div>
+    </div>
 
-                <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" id="last_name" required>
-                <div class="error" id="last_name_error"></div>
+    <div class="main_section">
+        <section class="main_content">
+            <span>
+                <div>
+                    <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11 0.120087C8.08369 0.123477 5.28779 1.26659 3.22564 3.29867C1.16348 5.33075 0.00345217 8.08587 1.17029e-05 10.9597C-0.00348119 13.3081 0.774992 15.5929 2.21601 17.4634C2.21601 17.4634 2.51601 17.8527 2.56501 17.9088L11 27.7118L19.439 17.9039C19.483 17.8517 19.784 17.4634 19.784 17.4634L19.785 17.4605C21.2253 15.5907 22.0034 13.3071 22 10.9597C21.9966 8.08587 20.8365 5.33075 18.7744 3.29867C16.7122 1.26659 13.9163 0.123477 11 0.120087ZM11 14.9013C10.2089 14.9013 9.43553 14.6702 8.77773 14.237C8.11993 13.8039 7.60724 13.1883 7.30449 12.4681C7.00174 11.7478 6.92253 10.9553 7.07687 10.1907C7.23121 9.42608 7.61217 8.72374 8.17158 8.17249C8.73099 7.62124 9.44373 7.24583 10.2197 7.09374C10.9956 6.94165 11.7998 7.01971 12.5307 7.31804C13.2616 7.61638 13.8864 8.12159 14.3259 8.7698C14.7654 9.418 15 10.1801 15 10.9597C14.9987 12.0047 14.5768 13.0065 13.827 13.7454C13.0771 14.4843 12.0605 14.9 11 14.9013Z"
+                            fill="black" />
+                    </svg>
 
-                <!-- </div> -->
-                <label for="company">Company Name (Optional)</label>
-                <input type="text" name="company" id="company">
-                <div class="error" id="company_error"></div>
-                <label for="country">Country / Region</label>
-                <input type="text" name="country" id="country" required>
-                <div class="error" id="country_error"></div>
-                <label for="street">Street Address</label>
-                <input type="text" name="street" id="street" required>
-                <div class="error" id="street_error"></div>
+                </div>
 
-
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" required>
-                <div class="error" id="city_error"></div>
-
-                <label for="state">State</label>
-                <input type="text" name="state" id="state" required>
-                <div class="error" id="state_error"></div>
-
-
-                <label for="zip">Postal</label>
-                <input type="text" name="zip" id="zip" required>
-                <div class="error" id="zip_error"></div>
-
-
-                <label for="phone">Phone</label>
-                <input type="text" name="phone" id="phone" required>
-                <div class="error" id="phone_error"></div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
-                <div class="error" id="email_error"></div>
-                <label for="more_info">Additional Information</label>
-                <input type="text" name="addInfo" id="more_info" placeholder="Enter additional information">
-                <div class="error" id="more_info_error"></div>
-
-            </form>
-        </div>
-
-        <div style="width: 100%;" class="billing_section">
-            <div class="cardPrice">
-                <span>
-                    <h2>product</h2>
-                    <p>Subtotal</p>
-                    <p>product price</p>
-                    <p>total price</p>
-                </span>
-                <span>
-                    <h2>Subtotal</h2>
-                    <p>Rs. 250,000.00</p>
-                    <p>Rs. 250,000.00</p>
-                    <p style="color: rgb(199, 144, 6); font-weight: 600;">Rs. 250,000.00</p>
-                </span>
-            </div>
-            <hr>
-            <div class="secund_side" ">
-            <div style="display: grid ;align-items: center; ">
-                <span style="display: flex; align-items: baseline; column-gap: 19px;">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="7" cy="7" r="7" fill="black"/>
-                        </svg>
-                    <h5>Direct Bank Transfer</h5>
-                </span>
-            </div>
-                <div class="description_sec">
+                <div>
+                    <h3>address</h3>
                     <p>
-                        Make your payment directly into our bank account. Please use <br> your Order ID as the payment
-                        reference. Your order will <br> not be shipped until the funds have cleared in our account.
+                        236 5th SE Avenue, New <br>York NY10000, United States
                     </p>
-                   <div class=" check_circle">
+                </div>
+            </span>
+            <hr>
+            <span>
                 <div>
-                    <input type="radio" name="pay_way" id="pay_way" required>
-                    <label for="check_box">Direct Bank Transfer</label>
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M25.6091 21.425L20.5279 16.805C20.2877 16.5867 19.972 16.4703 19.6476 16.4803C19.3232 16.4903 19.0154 16.626 18.7891 16.8587L15.7979 19.935C15.0779 19.7975 13.6304 19.3462 12.1404 17.86C10.6504 16.3687 10.1991 14.9175 10.0654 14.2025L13.1391 11.21C13.3721 10.9839 13.508 10.676 13.5181 10.3515C13.5281 10.027 13.4115 9.71129 13.1929 9.47124L8.5741 4.39124C8.35541 4.15044 8.05145 4.00437 7.72679 3.98407C7.40214 3.96376 7.08235 4.07082 6.83535 4.28249L4.12285 6.60874C3.90674 6.82564 3.77775 7.11431 3.76035 7.41999C3.7416 7.73249 3.3841 15.135 9.1241 20.8775C14.1316 25.8837 20.4041 26.25 22.1316 26.25C22.3841 26.25 22.5391 26.2425 22.5804 26.24C22.886 26.2229 23.1745 26.0933 23.3904 25.8762L25.7154 23.1625C25.9279 22.9163 26.0357 22.5968 26.0159 22.2721C25.996 21.9475 25.85 21.6435 25.6091 21.425Z"
+                            fill="black" />
+                    </svg>
                 </div>
 
                 <div>
-                    <input type="radio" name="pay_way" id="pay_way" required>
-                    <label for="check_box">Cash On Delivery</label>
+                    <h3>
+                        phone
+                    </h3>
+                    <p>
+                        Mobile: +(84) 546-6789
+                        <br>
+                        Hotline: +(84) 456-6789
+                    </p>
                 </div>
+            </span>
+            <hr>
+            <span>
 
-            </div>
+                <div>
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_63_247)">
+                            <path
+                                d="M23 11.5C23 14.55 21.7884 17.4751 19.6317 19.6317C17.4751 21.7884 14.55 23 11.5 23C8.45001 23 5.52494 21.7884 3.36827 19.6317C1.2116 17.4751 0 14.55 0 11.5C0 8.45001 1.2116 5.52494 3.36827 3.36827C5.52494 1.2116 8.45001 0 11.5 0C14.55 0 17.4751 1.2116 19.6317 3.36827C21.7884 5.52494 23 8.45001 23 11.5ZM11.5 5.03125C11.5 4.84063 11.4243 4.65781 11.2895 4.52302C11.1547 4.38823 10.9719 4.3125 10.7812 4.3125C10.5906 4.3125 10.4078 4.38823 10.273 4.52302C10.1382 4.65781 10.0625 4.84063 10.0625 5.03125V12.9375C10.0625 13.0642 10.0961 13.1886 10.1597 13.2982C10.2233 13.4077 10.3147 13.4985 10.4247 13.5614L15.456 16.4364C15.6211 16.5256 15.8146 16.5467 15.995 16.4952C16.1755 16.4437 16.3287 16.3236 16.4218 16.1607C16.5149 15.9977 16.5406 15.8048 16.4933 15.6232C16.4461 15.4415 16.3297 15.2856 16.169 15.1886L11.5 12.5206V5.03125Z"
+                                fill="black" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_63_247">
+                                <rect width="23" height="23" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <div>
+                    <h3>
+                        Working Time
+                    </h3>
+                    <p>
+                        Monday-Friday: 9:00 - 22:00
+                        <br>
+                        Saturday-Sunday: 9:00 - 21:00
+                    </p>
+                </div>
+            </span>
 
-            <div class="secund_p">
-                Your personal data will be used to support your experience <br> throughout this website, to manage
-                access to
-                your account,<br> and for other purposes described in our <b style="font-weight: 608;">privacy policy.</b>
+        </section>
+
+        <section>
+            <div>
+                <form id="contactForm">
+                    <label for="name">your name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error" id="nameError"></span>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error" id="emailError"></span>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                    <span class="error" id="phoneError"></span>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <span class="error" id="messageError"></span>
+
+                    <div class="btn_style"> 
+                        
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="place_order_btn"><button type="submit">place order</button></div>
+        </section>
     </div>
-    </div>
-    </div>
-       <div class="down_bar_section">
+
+    <div class="down_bar_section">
         <div class="">
             <svg width="54" height="60" viewBox="0 0 54 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M46.3547 3.51562C45.0744 3.51562 43.8741 3.86121 42.839 4.46156V1.75781C42.839 0.787031 42.052 0 41.0812 0H12.9562C11.9853 0 11.1983 0.787031 11.1983 1.75781V4.48301C10.155 3.8693 8.94102 3.51562 7.64551 3.51562C3.76848 3.51562 0.614258 6.66984 0.614258 10.5469C0.614258 13.5041 1.49059 16.3615 3.14844 18.8102C5.97078 22.9789 9.45113 24.0607 12.331 25.2127C13.9916 29.348 17.3496 32.6252 21.5384 34.1769L20.2422 42.4219H19.9875C17.0797 42.4219 14.714 44.7875 14.714 47.6953V56.4844H12.9562C11.9854 56.4844 11.1984 57.2714 11.1984 58.2422C11.1984 59.213 11.9854 60 12.9562 60H41.0812C42.052 60 42.839 59.213 42.839 58.2422C42.839 57.2714 42.052 56.4844 41.0812 56.4844H39.3234V47.6953C39.3234 44.7875 36.9577 42.4219 34.05 42.4219H33.7952L32.4991 34.177C36.6941 32.623 40.0558 29.3386 41.7139 25.1948C44.4344 24.1066 48.0005 23.0217 50.8518 18.8102C52.5097 16.3615 53.386 13.504 53.386 10.5469C53.3859 6.66984 50.2317 3.51562 46.3547 3.51562ZM11.1853 20.968C6.89926 19.2536 4.12988 15.1631 4.12988 10.5469C4.12988 8.60836 5.70699 7.03125 7.64551 7.03125C9.58402 7.03125 11.1611 8.60836 11.1611 10.5469C11.1611 10.6705 11.1741 10.791 11.1984 10.9073V19.3359C11.1984 19.9009 11.2288 20.4588 11.2869 21.0087L11.1853 20.968ZM35.8078 56.4844H18.2296V52.9688H35.8078V56.4844ZM34.05 45.9375C35.0192 45.9375 35.8078 46.7261 35.8078 47.6953V49.4531H18.2296V47.6953C18.2296 46.7261 19.0182 45.9375 19.9875 45.9375C20.9411 45.9375 31.8134 45.9375 34.05 45.9375ZM23.801 42.4219L24.9642 35.023C25.6368 35.1107 26.3225 35.1562 27.0187 35.1562C27.7149 35.1562 28.4006 35.1105 29.0732 35.023L30.2364 42.4219H23.801ZM39.3234 19.3359C39.3234 26.1207 33.8035 31.6406 27.0187 31.6406C20.2339 31.6406 14.714 26.1207 14.714 19.3359V10.5469H39.3234V19.3359ZM39.3234 7.03125H14.714V3.51562H39.3234V7.03125ZM42.8148 20.968L42.7523 20.993C42.8093 20.4483 42.8389 19.8955 42.8389 19.3359V10.5469C42.839 8.60836 44.4161 7.03125 46.3547 7.03125C48.2932 7.03125 49.8703 8.60836 49.8703 10.5469C49.8703 15.1631 47.1009 19.2537 42.8148 20.968Z" fill="#242424"/>
@@ -216,7 +223,7 @@
     <p>Dedicated support</p>
 </div>
     </div>
-    
+    <!-- footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section about">
@@ -253,7 +260,7 @@
         </div>
     </footer>
     
-    <script src="/js/test.js"></script>
+    <script src="/js/contact.js"></script>
 </body>
 
 </html>
