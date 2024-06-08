@@ -1,0 +1,19 @@
+.register_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.register_form{
+    display: flex;
+    flex-direction:column ; 
+    justify-content: center;
+    width: 50%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}

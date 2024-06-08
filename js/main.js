@@ -95,9 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredProducts = filterProductsByCategory(category);
         renderProducts(filteredProducts);
     });
+  });
+  
 
     // Initial render
-    function displayAllProducts() {
+  window.displayAllProducts = function displayAllProducts() {
         renderProducts(products);
     }
     displayAllProducts();
