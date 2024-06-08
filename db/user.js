@@ -1,3 +1,19 @@
+/// function to get list of users 
+export const listUsers = () => {
+  let users = localStorage.getItem("users");
+
+  if (!users) {
+    users = []; ///return empty array
+  } else {
+    users = JSON.parse(users);
+  }
+
+  return users;
+};
+
+
+
+
 export const createuser = (user) => {
   const users = listUsers();
 
@@ -13,17 +29,6 @@ export const createuser = (user) => {
   localStorage.setItem("users", JSON.stringify(users));
 };
 
-export const listUsers = () => {
-  let users = localStorage.getItem("users");
-
-  if (!users) {
-    users = [];
-  } else {
-    users = JSON.parse(users);
-  }
-
-  return users;
-};
 
 export const login = (loginUser) => {
   const users = listUsers();

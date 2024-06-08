@@ -1,8 +1,12 @@
 import { login } from "../db/user.js";
 
+
+/// flags
 let emailHasError = true;
 let passwordHasError = true;
 
+
+/// empty inout validation
 function validateIfInputIsEmpty(value) {
   if (!value || value === "") {
     return true;
@@ -11,6 +15,8 @@ function validateIfInputIsEmpty(value) {
   }
 }
 
+
+/// email validation function
 function validateEmail(inp) {
   const emptyEmail = validateIfInputIsEmpty(inp.value);
 
@@ -25,6 +31,9 @@ function validateEmail(inp) {
     emailHasError = false;
   }
 }
+
+
+/// password validation function
 
 function validatePassword(inp) {
   const emptyPassword = validateIfInputIsEmpty(inp.value);
