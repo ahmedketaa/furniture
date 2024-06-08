@@ -89,3 +89,22 @@ export function updateOrderStatus(productId, status) {
         saveProducts();
     }
 }
+
+
+
+//function to check if user is logged in
+export function userIsLogged() {
+    const user = localStorage.getItem("loggedUser");
+    if (user) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+
+// logout function
+export function logOut(){
+    localStorage.removeItem("loggedUser")
+}
