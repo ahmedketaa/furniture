@@ -146,4 +146,3 @@ document.addEventListener('DOMContentLoaded', () => {
         renderProducts(products);
     }
     displayAllProducts();
-});
