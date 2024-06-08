@@ -1,14 +1,15 @@
 // main.js
-import { getProductById, getLatestProducts, filterProductsByCategory ,filterProductsBySearch} from './productOperations.js';
-import { addToCart , addToWishList , isInWishlist , removeFromWishList , isInCart, removeFromCart } from './usersOperations.js';
+import { getProductById, filterProductsBySearch } from './productOperations.js';
+import { addToCart, addToWishList, isInWishlist, removeFromWishList, isInCart, removeFromCart } from './usersOperations.js';
 import { products } from './products.js';
 import { saveProducts } from './products.js';
 import { saveUsers } from './users.js';
 
-const userId = 1; 
+const userId = 1;
+
 
 // Declare addToWishlist function in the global scope
-window.addToWishlist = function(userId,productId) {
+window.addToWishlist = function (userId, productId) {
     console.log(productId);
     if (isInWishlist(userId, productId)) {
         removeFromWishList(userId, productId);
@@ -20,8 +21,8 @@ window.addToWishlist = function(userId,productId) {
 }
 
 
-window.displayProductDetails =  function displayProductDetails(productId) {
-    // Find the product by its ID
+window.displayProductDetails = function displayProductDetails(productId) {
+   
     const product = getProductById(productId);
 
     // Check if the product exists
@@ -53,13 +54,13 @@ window.displayProductDetails =  function displayProductDetails(productId) {
 }
 document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products_container');
-   
+
     // Function to render products
     function renderProducts(products) {
         productsContainer.innerHTML = '';
         let cartona = '';
-        
-    
+
+
         for (let i = 0; i < products.length; i++) {
             cartona += `
             <div class="product">
@@ -73,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="price">${products[i].price}$</span>
                     
                     <div class="buttons_container">
-                    <button class="add-to-cart ${isInCart(userId, products[i].id)?" clicked_button ":" "} " >${isInCart(userId, products[i].id)?"Remove From Cart": "Add To Cart"}</button>
-                    <i onclick="addToWishlist(${userId}, ${products[i].id})" class="${isInWishlist(userId,products[i].id)?"fas":"far"} fa-heart add-to-wishlist"></i>
+                    <button class="add-to-cart ${isInCart(userId, products[i].id) ? " clicked_button " : " "} " >${isInCart(userId, products[i].id) ? "Remove From Cart" : "Add To Cart"}</button>
+                    <i onclick="addToWishlist(${userId}, ${products[i].id})" class="${isInWishlist(userId, products[i].id) ? "fas" : "far"} fa-heart add-to-wishlist"></i>
                    
                      </div>
                     </div>
@@ -88,42 +89,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => product.classList.add('visible'), 100 * index);
             });
         }, 10);
-    
+
         // Add event listeners to "Add to Cart" buttons
         document.querySelectorAll('.add-to-cart').forEach((button, index) => {
             button.addEventListener('click', () => {
-                const productId = products[index].id; 
+                const productId = products[index].id;
                 console.log("tes", productId);
                 console.log('Product ID:', productId);
-        
+
                 if (isInCart(userId, productId)) {
                     removeFromCart(userId, productId);
                     button.textContent = 'Add to Cart';
-                    button.style.backgroundColor="white"
-                    button.style.color="black"
-                   saveUsers();
-                   saveProducts();
+                    button.style.backgroundColor = "white"
+                    button.style.color = "black"
+                    saveUsers();
+                    saveProducts();
                 } else {
                     addToCart(userId, productId); // Debugging: Check if addToCart is called
                     console.log('Added to cart');
                     console.log(isInCart(userId, productId));
 
                     button.textContent = 'Remove from Cart';
-                    button.style.backgroundColor="#b68d50"
-                    button.style.color="white"
+                    button.style.backgroundColor = "#b68d50"
+                    button.style.color = "white"
                     saveProducts(); // Debugging: Check if saveProducts is called
                 }
             });
         });
-        
+
     }
 
-    
+
     // Function to display latest products
-    function displayLatestProducts() {
-        const latestProducts = getLatestProducts();
-        renderProducts(latestProducts);
-    }
+  
 
     // Event listener for category filter
     document.getElementById('category').addEventListener('change', (event) => {
@@ -139,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredProducts = filterProductsBySearch(searchTerm).filter(product => category === "" || product.category === category);
         renderProducts(filteredProducts);
     });
+
+    // display 3 products in landing
     // Initial render
     window.displayAllProducts = function displayAllProducts() {
         renderProducts(products);

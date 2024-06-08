@@ -61,15 +61,18 @@ body, html {
   
   .navbar-right a {
     margin-left: 20px;
+
   }
   
   .navbar-right a i {
     color: black;
+    cursor: pointer !important;
+
   }
 
 /*start style section one */
 main.hero-image {
-    background-image: url('assets/landing-image.png');
+    background-image: url('../assets/landing-image.png');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -192,6 +195,7 @@ main .hero-text h1 {
 }
 
 .progress {
+  position: relative;
   height: 100%;
   background-color: #007bff;
   border-radius: 5px; /* تحديث شكل الزوايا */
