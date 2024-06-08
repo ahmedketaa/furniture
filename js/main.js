@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             `;
         }
-
+    
         productsContainer.innerHTML = cartona;
         setTimeout(() => {
             document.querySelectorAll('.product').forEach((product, index) => {
@@ -132,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredProducts = filterProductsBySearch(searchTerm).filter(product => category === "" || product.category === category);
         renderProducts(filteredProducts);
     });
-  });
-  
 
     document.getElementById('search').addEventListener('input', (event) => {
         const searchTerm = event.target.value;
@@ -146,3 +144,4 @@ document.addEventListener('DOMContentLoaded', () => {
         renderProducts(products);
     }
     displayAllProducts();
+});
