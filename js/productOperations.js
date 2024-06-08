@@ -12,3 +12,7 @@ export function filterProductsByCategory(category) {
 export function getProductById(productId) {
     return products.find(p => p.id === productId);
 }
+
+export function filterProductsBySearch(term) {
+    return products.filter(product => product.name.toLowerCase().includes(term.toLowerCase()) );
+}
