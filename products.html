@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="./css/products.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="./css/normaliz.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo-div">
+                <img src="./assets/logo.png" alt="Logo" class="logo">
+                <h3>EL Domayti</h3>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+    <!-- end nav -->
+    <!-- search section -->
+    <div class="search"></div>
+    <!-- start products -->
+    <div class="main_container">
+        <div class="products_container" id="products_container">
+            <!-- the product box -->
+        </div>
+        <!-- product details -->
+        <div class="right_container">
+            <div class="form-group">
+                <label for="search">Search Products:</label>
+                <input type="text" id="search" placeholder="Type to search...">
+                <label for="category">Choose a category:</label>
+                <select id="category">
+                    <option value="">All Categories</option>
+                    <option value="Living Room">Living Room</option>
+                    <option value="Dining Room">Dining Room</option>
+                    <option value="Decorative">Decorative</option>
+                    <option value="Storage">Storage</option>
+                    <option value="Bedroom">Bedroom</option>
+                    <option value="Office">Office</option>
+                    <!-- Add other categories here if needed -->
+                </select>
+                
+               
+                    
+            </div>
+            <div id="detailsBox" class="product_details">
+                <div>
+                    
+                    <h3>select a product to show details...!</h3>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/usersOperations.js"></script>
+    </body>
+</html>
