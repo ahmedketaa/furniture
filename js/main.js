@@ -142,11 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderProducts(filteredProducts);
     });
     // Initial render
-<<<<<<< HEAD
     window.displayAllProducts = function displayAllProducts() {
-=======
-  window.displayAllProducts = function displayAllProducts() {
->>>>>>> 3543040cc70d1136d35c12209fcb9811da803ace
         renderProducts(products);
     }
     displayAllProducts();
