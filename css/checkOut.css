@@ -32,7 +32,7 @@ body {
   grid-template-columns: auto auto;
 }
 
-header {
+/* header {
   background-color: #3333;
   padding: 20px;
   height: 40vh;
@@ -43,7 +43,19 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url(/assets/img1.jpeg);
+} */
+header {
+  background-repeat: no-repeat;
+  background-image: url('../assets/img1.jpeg');
+  background-size: contain;
+  background-position: center;
+  height: 400px;
+  width: 90%;
+  margin: 80px auto 0 auto; 
+  position: relative;
+
 }
+
 
 form {
   padding-top: 20px;

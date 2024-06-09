@@ -27,14 +27,25 @@
 
   }
 
-header{
+/* header{
   background-image: url(/assets/Rectangle\ 57.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: #000000;
   height: 40vh;
- }
+ } */
+header {
+  background-image: url('../assets/Rectangle\ 57.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 400px;
+  width: 90%;
+  margin: 80px auto 0 auto; 
+  position: relative;
+}
  .head_content{
   align-items: center;
   justify-content: center;
@@ -44,8 +55,9 @@ header{
 
  .head_content h1{
   text-align: center;
-color: #f1cd79;
-  font-size: 80px;
+  font-size: 8rem;
+  color: black;
+
 
  }
 
