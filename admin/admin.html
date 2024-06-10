@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="icon" href="../assets/logo.png"  type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>  ElDomiaty | Admin </title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/normaliz.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/products.css">
+        
+    <!-- Boxicons CDN Link -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+   </head>
+<body>
+<!--Start side bar -->
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">El Domiaty</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="active">
+            <i class="fa-solid fa-gauge"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="totalPosts" >
+            <i class="fa-solid fa-shop"></i>
+            <span class="links_name">All Products</span>
+          </a>
+        </li>
+        <li id="pendingOrders">
+          <a href="#">
+            <i class="fa-solid fa-hourglass-end"></i>
+            <span class="links_name">Pending Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="categoryList">
+            <i class="fa-solid fa-list"></i>
+            <span class="links_name" > Categories list</span>
+          </a>
+        </li>
+      
+       
+       
+        <li>
+          <a href="#" id="userList">
+            <i class="fa-solid fa-user"></i>
+            <span class="links_name">Users</span>
+          </a>
+        </li>
+               
+           
+        <li >
+          <a href="#" id="addProduct" >
+            <i class="fa-solid fa-plus"></i>
+            <span class="links_name" >Add Product</span>
+          </a>
+        </li>
+        <li >
+          <a href="#" id="addCategoryBtn">
+            <i class="fa-solid fa-plus"></i>
+            <span class="links_name" >Add Category</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="../index.html">
+            <i style="transform: rotate(180deg);" class="fa-solid fa-right-from-bracket"></i>
+            <span class="links_name">Back Home</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <!-- end side bar -->
+
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <!-- <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div> -->
+      <div class="profile-details">
+        <img src="../assets/logo.png" alt="">
+        <span class="admin_name">Ahmed Mostafa</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Products</div>
+            <div class="number" id="productsCount">00.00</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Last Update Now</span>
+            </div>
+          </div>
+          <!-- <i class='bx bx-cart-alt cart'></i> -->
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Pets</div>
+            <div class="number" id="petCount">00.00</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Last Update Now</span>
+            </div>
+          </div>
+          <!-- <i class='bx bxs-cart-add cart two' ></i> -->
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Solids</div>
+            <div class="number" id="solidCount">00.00</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Last Update Now</span>
+            </div>
+          </div>
+          <!-- <i class='bx bx-cart cart three' ></i> -->
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Users</div>
+            <div class="number" id="userCount">00.00</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Last Update Now</span>
+            </div>
+          </div>
+          <!-- <i class='bx bx-cart cart three' ></i> -->
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Website Views</div>
+            <div class="number" id="viewCount">108</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Last Update Now</span>
+            </div>
+          </div>
+          <!-- <i class='bx bxs-cart-download cart four' ></i> -->
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="container mt-5">
+       <div class="row special-row" id="prodId">
+           
+      </div>
+  </section>
+
+ <!--start modal  -->
+ <!-- The products Modal -->
+ <div id="myModal" class="modal">
+     <!-- Modal content -->
+     <div class="modal-content">
+         <span class="close">&times;</span>
+        <div class="edit_form" id="changeContent">
+          <div id="productFormContainer">
+            <h2>Add/Edit Product</h2>
+            <form id="productForm">
+              <input type="hidden" id="productId" name="productId">
+              <label for="productName">Name:</label>
+              <input type="text" id="productName" name="productName" required>
+              <label for="productCategory">Category:</label>
+              <input type="text" id="productCategory" name="productCategory" required>
+              <label for="productPrice">Price:</label>
+              <input type="tel" id="productPrice" name="productPrice" required>
+              <label for="productImage">Image URL:</label>
+              <input type="text" id="productImage" name="productImage" required>
+              <div class="buttons_container">
+                <button class="edit_button" type="submit">Save Product</button>
+              </div>
+            </form>
+          </div>
+    
+        </div>
+     </div>
+ </div>
+ <!-- end products modal -->
+
+ <!-- start category modal -->
+  <!-- Category Modal -->
+<div id="categoryModal" class="modal">
+  <div class="modal-content">
+      <span id="closeCategoryModal" class="close">&times;</span>
+      <h2 id="categoryModalTitle">Add Category</h2>
+      <form id="categoryForm">
+          <input type="hidden" id="categoryId" name="categoryId">
+          <label for="categoryName">Category Name:</label>
+          <input type="text" id="categoryName" name="categoryName" required>
+          <div class="buttons_container">
+          <button class="edit_button" type="submit">Save</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+<!-- Add Category Button -->
+<!-- <button id="addCategoryBtn">Add Category</button> -->
+<!-- end category modal -->
+  <script>
+  
+  var modal = document.getElementById("myModal");
+  var categoryModal=document.getElementById("categoryModal")
+// Get the button that opens the modal
+var btn = document.getElementById("openModalBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+  function openModal() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  const productForm = document.getElementById('productForm');
+    productForm.reset()
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// end Modal
+
+// category modal
+document.getElementById("closeCategoryModal").addEventListener('click',function(){
+  categoryModal.style.display="none"
+})
+window.onclick = function(event) {
+    if (event.target == categoryModal) {
+        categoryModal.style.display = "none";
+    }
+}
+// Select all the anchor elements inside elements with the class 'nav-links'
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  // Attach a click event listener to each link
+  link.addEventListener('click', function() {
+    // Remove the 'active' class from all links
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.classList.remove('active');
+    });
+    // Add the 'active' class to the clicked link
+    this.classList.add('active');
+  });
+});
+
+
+
+
+
+
+
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+
+// Get All Users
+
+
+
+
+ </script>
+
+
+<script type="module" src="../js/admin.js"></script>
+<script type="module" src="../js/openModal.js"></script>
+<script type="module" src="../js/categoryModal.js"></script>
+
+</body>
+</html>

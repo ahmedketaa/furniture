@@ -1,17 +1,18 @@
 // usersOperations.js
-// usersOperations.js
 import { users, saveUsers } from './users.js';
 import { products,saveProducts } from './products.js';
+import { saveOrder } from './order.js';
 
 export function addToCart(userId, productId) {
-    console.log(userId +" "+ productId)
+    console.log(userId + " " + productId)
     const user = users.find(u => u.id === userId);
     const product = products.find(p => p.id === productId);
-    console.log("test",product.status);
-    if (user && product  && !isInCart(userId, productId)) {
+    console.log("test", product.status);
+    if (user && product && !isInCart(userId, productId)) {
+        user.cart = user.cart || []; 
         user.cart.push({ ...product, status: 'pending' });
-        saveUsers(); 
-        console.log(user.cart);
+        saveUsers();
+        
     }
 }
 // remove from cart
@@ -28,18 +29,20 @@ export function removeFromCart(userId, productId) {
 
 export function isInCart(userId, productId) {
     const user = users.find(u => u.id === userId);
-        return user && user.cart.some(p => p.id === productId);
-    
+    return user && user.cart && user.cart.some(p => p.id === productId); // Check if cart exists
 }
 export function addToWishList(userId, productId) {
     const user = users.find(u => u.id === userId);
     const product = products.find(p => p.id === productId);
     if (user && product) {
+        if (!user.wishList) user.wishList = []; // Initialize wishList if it doesn't exist
         user.wishList.push(product);
-        saveUsers(); 
+        console.log(user);
+        saveUsers();
     }
     console.log(user.wishList);
 }
+
 
 export function removeFromWishList(userId, productId) {
     const user = users.find(u => u.id === userId);
@@ -51,7 +54,7 @@ export function removeFromWishList(userId, productId) {
 
 export function isInWishlist(userId, productId) {
     const user = users.find(u => u.id === userId);
-    return user && user.wishList.some(p => p.id === productId);
+    return user && user.wishList && user.wishList.some(p => p.id === productId); // Check if wishList exists
 }
 
 export function checkout(userId) {
@@ -67,10 +70,10 @@ export function checkout(userId) {
     }
 }
 
-export function getCartByStatus(userId, status) {
+export function getUserCarts(userId) {
     const user = users.find(u => u.id === userId);
-    if (user) {
-        return user.cart.filter(p => p.status === status);
+    if (user.cart) {
+        return user.cart;
     }
     return [];
 }
@@ -107,4 +110,46 @@ export function userIsLogged() {
 // logout function
 export function logOut(){
     localStorage.removeItem("loggedUser")
+}
+
+
+export function updateQuantityInCart(productId , userId, quantity){
+    let loggedUser = users.find((user)=>{
+       return user.id == userId
+    })
+
+    if(loggedUser){
+        let cartProduct = loggedUser.cart.find((product)=>product.id===productId)
+        cartProduct.quantity = quantity;
+    }
+
+    saveUsers()
+}
+
+export function placeOrder(userId,data){
+    let user = users.find((user)=>user.id===userId)
+
+    if(user && user.cart.length > 0){
+        let userCart = user.cart
+        let totalPrice = 0
+
+        for(var i=0 ; i<userCart.length;i++){
+           let price = userCart[i].price
+           let quantity = userCart[i].quantity
+           totalPrice = (price*quantity)+totalPrice
+        }
+
+        const order = {
+            staus:"pending",
+            userId,
+            products:userCart,
+            totalPrice,
+            ...data
+        }
+
+        saveOrder(order)
+        user.cart=[]
+        saveUsers()
+    }
+
 }

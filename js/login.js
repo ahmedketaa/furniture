@@ -1,10 +1,8 @@
-import { login } from "../db/user.js";
-
+import { userLogin } from "../db/user.js";
 
 /// flags
 let emailHasError = true;
 let passwordHasError = true;
-
 
 /// empty inout validation
 function validateIfInputIsEmpty(value) {
@@ -14,7 +12,6 @@ function validateIfInputIsEmpty(value) {
     return false;
   }
 }
-
 
 /// email validation function
 function validateEmail(inp) {
@@ -31,7 +28,6 @@ function validateEmail(inp) {
     emailHasError = false;
   }
 }
-
 
 /// password validation function
 
@@ -59,7 +55,7 @@ document.getElementById("login_form").addEventListener("submit", (event) => {
   if (!emailHasError && !passwordHasError) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const loggedin = login({ email, password });
+    const loggedin = userLogin({ email, password });
 
     if (!loggedin) {
       document.getElementById("login_error").innerHTML = "wrong credetials";

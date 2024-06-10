@@ -1,4 +1,4 @@
-import { createuser } from "../db/user.js";
+import { createUser } from "../db/user.js";
 
 /// Flag
 
@@ -6,7 +6,6 @@ let fullNameHasError = true;
 let emailHasError = true;
 let passwordHasError = true;
 let rePasswordHasError = true;
-let roleHasError = true;
 
 /// Function to check if blur is empty or not
 
@@ -25,7 +24,7 @@ function validateFullName(inp) {
   if (emptyFullName) {
     inp.nextElementSibling.innerHTML = "Full Name is required";
   } else if (inp.value.length < 3) {
-    inp.nextElementSibling.innerHTML = "Full Name must be greaterthan 3 chars";
+    inp.nextElementSibling.innerHTML = "Full Name must be greater than 3 chars";
   } else {
     inp.nextElementSibling.innerHTML = "";
     fullNameHasError = false;
@@ -73,15 +72,6 @@ function validateRePassword(inp1, password) {
   }
 }
 
-function validatRole(inp) {
-  if (inp.value !== "Admin" && inp.value !== "User") {
-    inp.nextElementSibling.innerHTML = "Role is required";
-  } else {
-    roleHasError = false;
-    inp.nextElementSibling.innerHTML = "";
-  }
-}
-
 document.getElementById("fullName").addEventListener("blur", (event) => {
   validateFullName(event.target);
 });
@@ -98,25 +88,27 @@ document.getElementById("re_passowrd").addEventListener("blur", (event) => {
   validateRePassword(event.target, document.getElementById("password").value);
 });
 
-document.getElementById("role").addEventListener("change", (event) => {
-  validatRole(event.target);
-});
-
 document.getElementById("register_form").addEventListener("submit", (event) => {
   event.preventDefault();
   if (
     !fullNameHasError &&
     !emailHasError &&
     !passwordHasError &&
-    !rePasswordHasError &&
-    !roleHasError
+    !rePasswordHasError
   ) {
     const fullName = document.getElementById("fullName").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const role = document.getElementById("role").value;
 
-    createuser({ fullName, role, email, password });
+    createUser({
+      fullName,
+      role: "user",
+      email,
+      password,
+      cart: [],
+      wishList: [],
+      notifications: [],
+    });
 
     window.location.href = "./login.html";
   }

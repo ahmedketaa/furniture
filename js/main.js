@@ -1,17 +1,26 @@
 // main.js
 import { getProductById, filterProductsBySearch } from './productOperations.js';
-import { addToCart, addToWishList, isInWishlist, removeFromWishList, isInCart, removeFromCart } from './usersOperations.js';
+import { addToCart, isInWishlist, removeFromWishList, isInCart, removeFromCart } from './usersOperations.js';
 import { products } from './products.js';
 import { saveProducts } from './products.js';
-import { saveUsers } from './users.js';
+import { saveUsers, users } from './users.js';
+import { addToWishList } from './usersOperations.js';
+import { categories, loadCategories } from './categories.js';
 
-const userId = 1;
+const loggedUser=localStorage.getItem("loggedUser");
+const userId = JSON.parse(loggedUser).id;
+const user = users.find(u => u.id === userId);
+const userCartCount=user.cart.length;
+document.querySelectorAll(".cart_count").forEach(icon=>{
+    icon.textContent=` (${userCartCount}) `
+})
 
 
 // Declare addToWishlist function in the global scope
 window.addToWishlist = function (userId, productId) {
     console.log(productId);
     if (isInWishlist(userId, productId)) {
+
         removeFromWishList(userId, productId);
     } else {
         addToWishList(userId, productId);
@@ -19,7 +28,6 @@ window.addToWishlist = function (userId, productId) {
     displayAllProducts();
 
 }
-
 
 window.displayProductDetails = function displayProductDetails(productId) {
    
@@ -124,24 +132,50 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
     // Event listener for category filter
-    document.getElementById('category').addEventListener('change', (event) => {
-        const category = event.target.value;
+    function filterAndRenderProducts() {
         const searchTerm = document.getElementById('search').value;
-        const filteredProducts = filterProductsBySearch(searchTerm).filter(product => category === "" || product.category === category);
-        renderProducts(filteredProducts);
-    });
-
-    document.getElementById('search').addEventListener('input', (event) => {
-        const searchTerm = event.target.value;
         const category = document.getElementById('category').value;
         const filteredProducts = filterProductsBySearch(searchTerm).filter(product => category === "" || product.category === category);
         renderProducts(filteredProducts);
-    });
+    }
 
-    // display 3 products in landing
+    // Event listener for search input
+    document.getElementById('search').addEventListener('input', filterAndRenderProducts);
+
+    // Event listener for category dropdown
+    document.getElementById('category').addEventListener('change', filterAndRenderProducts);
+    loadCategories();
+    displayCategories(categories);
+    
+    // Event listener for category dropdown
+    // document.getElementById('category').addEventListener('change', (event) => {
+    //     const category = event.target.value;
+    //     const searchTerm = document.getElementById('search').value;
+    //     const filteredProducts = filterProductsByCategory(category).filter(product => category === "" || product.category === category);
+    //     renderProducts(filteredProducts);
+    // });
+
+    // Function to render categories in HTML
+    function displayCategories(categories) {
+        console.log(categories);
+        let cartona=''
+        categories.forEach(category => {
+            cartona += `
+            <option value="${category.name}">${category.name}</option>
+            `;
+        });
+        document.getElementById('category').innerHTML+=cartona;
+    }
+
+    // // CRUD operations for categories
+    // const categoryForm = document.getElementById('categoryForm');
+    // categoryForm.addEventListener('submit', handleCategoryFormSubmit);
+
+   
+
     // Initial render
     window.displayAllProducts = function displayAllProducts() {
         renderProducts(products);
     }
-    displayAllProducts();
+     displayAllProducts();
 });

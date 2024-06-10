@@ -108,7 +108,7 @@ body, html {
     cursor: pointer;
   }
   .products_container .image img{
-    max-width: 100%;
+    max-width: 300px;
     border-radius: 8px;
     transition: .3s;
   }

@@ -1,8 +1,6 @@
 // products.js
    
-
-
-export const products = loadProducts();
+ const products = loadProducts();
 
 export function saveProducts() {
     localStorage.setItem('products', JSON.stringify(products));
@@ -14,7 +12,7 @@ export function loadProducts() {
     if (productsJSON) {
         return JSON.parse(productsJSON);
     }
-    return [
+        return [
 
         { id: 1, name: 'Modern Sofa', category: 'Living Room', price: 250, status: "available", image: './assets/Rectangle26.png', description: 'A sleek and comfortable modern sofa perfect for your living room.' },
         { id: 2, name: 'Dining Table', category: 'Dining Room', price: 300, status: "available", image: './assets/Rectangle27.png', description: 'A sturdy dining table ideal for family gatherings and dinner parties.' },
@@ -38,3 +36,4 @@ export function loadProducts() {
 
 
 
+export { products };
