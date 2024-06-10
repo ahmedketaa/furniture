@@ -3,9 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Furniture eCommerce Cart</title>
+    <link rel="stylesheet" href="/css/navBar.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/normaliz.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/footter.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar_left">
+            <div class="logo_div">
+                <img src="/assets/logo.png" alt="Logo" class="logo">
+                <h3>EL-DOMIATY.</h3>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="products.html">Shop</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar_right">
+            <a href="#"><i class="fas fa-shopping-cart"></i></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+    <header>
+        <img src="/media/assets/Meubel House_Logos-05.png" alt="">
+        <div class="head_content">
+
+            <h1>Cart</h1>
+        </div>
+    </header>
     
+    <main>
+        <section class="cart">
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/assets/img1.jpeg" alt="Sofa"> kanba rayqa</td>
+                        <td>Rs. 250,000.00</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>Rs. 250,000.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="cart-totals" >
+                <h2>Cart Totals</h2>
+                <p>Subtotal: Rs. 250,000.00</p>
+                <p>Total: Rs. 250,000.00</p>
+                <button>Check Out</button>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="box">
+                <div class="text">
+                    <i class="far fa-clock"></i>
+                    <h3>Shope online</h3>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Consequat dolor odio odio 
+                </p>
+            </div>
+            <div class="box">
+                <div class="text">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Shope online</h3>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Consequat dolor odio odio 
+                </p>
+            </div>
+            <div class="box">
+                <div class="text">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Shope online</h3>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Consequat dolor odio odio 
+                </p>
+            </div>
+            <div class="box">
+                <div class="text">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Shope online</h3>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Consequat dolor odio odio 
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About EL Domayti</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor odio odio malesuada at condimentum adipiscing iaculis semper.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@eldomayti.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 1234 Street Smart Village, Beni Suief, Egypt</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EL-DOMIATY. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script >
+        document.addEventListener("DOMContentLoaded", function () {
+    const quantityInput = document.querySelector("input[type='number']");
+    const priceElement = document.querySelector("td:nth-child(2)");
+    const subtotalElement = document.querySelector("td:nth-child(4)");
+    const totalElement = document.querySelector(".cart-totals p:nth-child(2)");
+
+    const price = parseFloat(priceElement.textContent.replace(/[^0-9.-]+/g,""));
+
+    function updateSubtotal() {
+        const quantity = parseInt(quantityInput.value);
+        const subtotal = price * quantity;
+        subtotalElement.textContent = `Rs. ${subtotal.toFixed(2)}`;
+        totalElement.textContent = `Total: Rs. ${subtotal.toFixed(2)}`;
+    }
+
+    quantityInput.addEventListener("input", function () {
+        updateSubtotal();
+    });
+
+    // Initialize subtotal on page load
+    updateSubtotal();
+});
+
+    </script>
 </body>
 </html>
