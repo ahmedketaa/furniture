@@ -1,6 +1,7 @@
 // usersOperations.js
 import { users, saveUsers } from './users.js';
 import { products,saveProducts } from './products.js';
+import { saveOrder } from './order.js';
 
 export function addToCart(userId, productId) {
     console.log(userId + " " + productId)
@@ -69,10 +70,10 @@ export function checkout(userId) {
     }
 }
 
-export function getCartByStatus(userId, status) {
+export function getUserCarts(userId) {
     const user = users.find(u => u.id === userId);
-    if (user) {
-        return user.cart.filter(p => p.status === status);
+    if (user.cart) {
+        return user.cart;
     }
     return [];
 }
@@ -109,4 +110,47 @@ export function userIsLogged() {
 // logout function
 export function logOut(){
     localStorage.removeItem("loggedUser")
+    window.location.href = "./products.html"
+}
+
+
+export function updateQuantityInCart(productId , userId, quantity){
+    let loggedUser = users.find((user)=>{
+       return user.id == userId
+    })
+
+    if(loggedUser){
+        let cartProduct = loggedUser.cart.find((product)=>product.id===productId)
+        cartProduct.quantity = quantity;
+    }
+
+    saveUsers()
+}
+
+export function placeOrder(userId,data){
+    let user = users.find((user)=>user.id===userId)
+
+    if(user && user.cart.length > 0){
+        let userCart = user.cart
+        let totalPrice = 0
+
+        for(var i=0 ; i<userCart.length;i++){
+           let price = userCart[i].price
+           let quantity = userCart[i].quantity
+           totalPrice = (price*quantity)+totalPrice
+        }
+
+        const order = {
+            staus:"pending",
+            userId,
+            products:userCart,
+            totalPrice,
+            ...data
+        }
+
+        saveOrder(order)
+        user.cart=[]
+        saveUsers()
+    }
+
 }

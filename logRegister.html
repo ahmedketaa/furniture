@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register Page</title>
+    <link rel="stylesheet" href="./css/logRegister.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/about.css">
+    <!-- Awesome fotns library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="./css/normaliz.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo-div">
+                <img src="./assets/logo.png" alt="Logo" class="logo">
+                <h3>EL Domayti</h3>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    
+    <!-- Buttons for Login/Register -->
+    <div class="button-container">
+        <button id="show-login">Login</button>
+        <button id="show-register">Register</button>
+    </div>
+    
+    <!-- Login/Register Forms -->
+    <div class="forms-container">
+        <div class="login-form visible" id="login-form">
+            <form id="login_form" class="register_form" method="post">
+                <label>Email:</label>
+                <input type="text" id="login_email" name="email" placeholder="Enter your email">
+                <span></span><br />
+                <label>Password:</label>
+                <input id="login_password" type="password" name="pword" placeholder="Enter your password">
+                <span></span><br />
+                <button type="submit" id="submit">login</button>
+                <span id="login_error"></span>
+            </form>
+        </div>
+    
+        <div class="register-form" id="register-form">
+            <form id="register_form" class="register_form" method="post">
+                <label>Full Name:</label>
+                <input type="text" name="fName" id="fullName" placeholder="Enter your Name" pattern="[A-Za-z]{3,}">
+                <span></span><br />
+                <label>Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <span></span><br />
+                <label>Password:</label>
+                <input id="password" type="password" name="pword" placeholder="Enter your password">
+                <span></span><br />
+                <label>Re-Enter your Password:</label>
+                <input id="re_password" type="password" name="rePword" placeholder="Re-Enter your password">
+                <span></span><br />
+                <button type="submit" id="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <!-- End Login/Register Forms -->
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About EL Domayti</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor odio odio malesuada at condimentum adipiscing iaculis semper.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@eldomayti.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 1234 Street Smart Village, Beni Siuef, Egypt</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EL Domayti. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    
+    <script src="./js/logRegister.js" type="module"></script>
+</body>
+
+   
+           
