@@ -110,6 +110,7 @@ export function userIsLogged() {
 // logout function
 export function logOut(){
     localStorage.removeItem("loggedUser")
+    window.location.href = "./products.html"
 }
 
 

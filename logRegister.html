@@ -48,10 +48,10 @@
         <div class="login-form visible" id="login-form">
             <form id="login_form" class="register_form" method="post">
                 <label>Email:</label>
-                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <input type="text" id="login_email" name="email" placeholder="Enter your email">
                 <span></span><br />
                 <label>Password:</label>
-                <input id="password" type="password" name="pword" placeholder="Enter your password">
+                <input id="login_password" type="password" name="pword" placeholder="Enter your password">
                 <span></span><br />
                 <button type="submit" id="submit">login</button>
                 <span id="login_error"></span>
@@ -71,13 +71,6 @@
                 <span></span><br />
                 <label>Re-Enter your Password:</label>
                 <input id="re_password" type="password" name="rePword" placeholder="Re-Enter your password">
-                <span></span><br />
-                <label>Role:</label>
-                <select id="role" name="role">
-                    <option selected disabled>Select Your Role:</option>
-                    <option>Admin</option>
-                    <option>User</option>
-                </select>
                 <span></span><br />
                 <button type="submit" id="submit">Register</button>
             </form>
@@ -123,10 +116,7 @@
     </footer>
     <!-- End Footer -->
     
-    <script src="./js/logRegister.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="./js/register.js"></script>
-    
+    <script src="./js/logRegister.js" type="module"></script>
 </body>
 
    
