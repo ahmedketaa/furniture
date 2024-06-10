@@ -224,36 +224,42 @@ h3{
   margin-left: 20px;
 }
 /* start section malo4 name */
-.design{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 0 15px;
-    margin: 100px 0;
+.design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0 15px;
+  margin: 100px 0;
 }
 
-.design .box-1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.design .box-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.design .box-1 h5{
-    font-size: 18px;
-    margin: 0;
+
+.design .box-1 h5 {
+  font-size: 18px;
+  margin: 0;
+  text-align: center; 
 }
-.design .box-1 p{
-    color: #777;
+
+.design .box-1 p {
+  color: #777;
 }
-.design .box-1 a{
-    color: #777;
-    text-decoration:underline;
-    margin-top: 15px;
+
+.design .box-1 a {
+  color: #777;
+  text-decoration: underline;
+  margin-top: 15px;
 }
-.design .box-1 img{
-    width: 80%;
+
+.design .box-1 img {
+  width: 80%;
 }
+
 /* Footer Styles */
 .footer {
   background-color: #1A1A1A;
