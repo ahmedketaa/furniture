@@ -65,10 +65,9 @@ form {
 }
 form input {
   padding: 14px;
-  margin: 5px 0;
   border: 1px solid #9f9f9f;
   border-radius: 4px;
-  width: 70%;
+  width: 90%;
 }
 label {
   padding-bottom: 20px;

@@ -63,7 +63,10 @@ table {
 }
 table tr th{
     
-    background-color: #ddd;
+    padding: 20px;
+    background-color: palegoldenrod;
+    font-weight: 600;
+
 }
 
 table th, table td {
@@ -82,7 +85,10 @@ table td img {
 
 .cart-totals {
     text-align: right;
+    line-height: 2.5;
+    display: contents;
 }
+
 
 .cart-totals h2 {
     font-size: 24px;

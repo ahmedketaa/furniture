@@ -72,7 +72,7 @@
                 <h2>Cart Totals</h2>
                 <p>Subtotal: Rs. 250,000.00</p>
                 <p>Total: Rs. 250,000.00</p>
-                <button>Check Out</button>
+                <button id="navigateButton">Check Out</button>
             </div>
         </section>
         
@@ -175,6 +175,9 @@
 
     // Initialize subtotal on page load
     updateSubtotal();
+    document.getElementById('navigateButton').addEventListener('click', function() {
+            window.location.href = 'checkout.html';
+        });
 });
 
     </script>
