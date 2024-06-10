@@ -1,174 +1,412 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Details Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inp {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.875em;
+            margin-bottom: 10px;
+        }
+
+        .error-input {
+            border-color: red;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #5cb85c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="billing-form" action="">
+            <h1>Billing details</h1>
+            <div class="inp">
+                <div>
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first-name" id="first-name" required>
+                    <div class="error" id="first-name-error"></div>
+                </div>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last-name" id="last-name" required>
+                    <div class="error" id="last-name-error"></div>
+                </div>
+            </div>
+            <label for="company">Company Name (Optional)</label>
+            <input type="text" name="company" id="company">
+            <div class="error" id="company-error"></div>
+            <label for="country">Country / Region</label>
+            <input type="text" name="country" id="country" required>
+            <div class="error" id="country-error"></div>
+            <label for="street">Street Address</label>
+            <input type="text" name="street" id="street" required>
+            <div class="error" id="street-error"></div>
+            <div class="inp">
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" required>
+                    <div class="error" id="city-error"></div>
+                </div>
+                <div>
+                    <label for="state">State</label>
+                    <input type="text" name="state" id="state" required>
+                    <div class="error" id="state-error"></div>
+                </div>
+                <div>
+                    <label for="zip">Postal</label>
+                    <input type="text" name="zip" id="zip" required>
+                    <div class="error" id="zip-error"></div>
+                </div>
+            </div>
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" required>
+            <div class="error" id="phone-error"></div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <div class="error" id="email-error"></div>
+            <label for="more-info">Additional Information</label>
+            <input type="text" name="addInfo" id="more-info" placeholder="Enter additional information">
+            <div class="error" id="more-info-error"></div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('billing-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission for validation
+
+            // Clear previous error messages
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(element => element.textContent = '');
+
+            // Clear previous error input highlights
+            const inputElements = document.querySelectorAll('input');
+            inputElements.forEach(element => element.classList.remove('error-input'));
+
+            const firstName = document.getElementById('first-name');
+            const lastName = document.getElementById('last-name');
+            const country = document.getElementById('country');
+            const street = document.getElementById('street');
+            const city = document.getElementById('city');
+            const state = document.getElementById('state');
+            const zip = document.getElementById('zip');
+            const phone = document.getElementById('phone');
+            const email = document.getElementById('email');
+
+            const zipRegex = /^\d{5}$/;
+            const phoneRegex = /^\d{10}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            let isValid = true;
+
+            if (!validateName(firstName)) isValid = false;
+            if (!validateName(lastName)) isValid = false;
+            if (!validateCountry(country)) isValid = false;
+            if (!validateStreet(street)) isValid = false;
+            if (!validateCity(city)) isValid = false;
+            if (!validateState(state)) isValid = false;
+            if (!validateZip(zip, zipRegex)) isValid = false;
+            if (!validatePhone(phone, phoneRegex)) isValid = false;
+            if (!validateEmail(email, emailRegex)) isValid = false;
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                // Perform actual form submission here (e.g., send data to server)
+                // document.getElementById('billing-form').submit();
+            }
+        });
+
+        function validateName(input) {
+            if (!input.value.trim()) {
+                showError(input, 'This field is required.');
+                return false;
+            }
+            return true;
+        }
+
+        function validateCountry(input) {
+            if (!input.value.trim()) {
+                showError(input, 'Country is required.');
+                return false;
+            }
+            return true;
+        }
+
+        function validateStreet(input) {
+            if (!input.value.trim()) {
+                showError(input, 'Street address is required.');
+                return false;
+            }
+            return true;
+        }
+
+        function validateCity(input) {
+            if (!input.value.trim()) {
+                showError(input, 'City is required.');
+                return false;
+            }
+            return true;
+        }
+
+        function validateState(input) {
+            if (!input.value.trim()) {
+                showError(input, 'State is required.');
+                return false;
+            }
+            return true;
+        }
+
+        function validateZip(input, regex) {
+            if (!input.value.trim()) {
+                showError(input, 'ZIP code is required.');
+                return false;
+            } else if (!regex.test(input.value)) {
+                showError(input, 'Invalid ZIP code. Must be 5 digits.');
+                return false;
+            }
+            return true;
+        }
+
+        function validatePhone(input, regex) {
+            if (!input.value.trim()) {
+                showError(input, 'Phone number is required.');
+                return false;
+            } else if (!regex.test(input.value)) {
+                showError(input, 'Invalid phone number. Must be 10 digits.');
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmail(input, regex) {
+            if (!input.value.trim()) {
+                showError(input, 'Email is required.');
+                return false;
+            } else if (!regex.test(input.value)) {
+                showError(input, 'Invalid email format.');
+                return false;
+            }
+            return true;
+        }
+
+        function showError(input, message) {
+            const errorElement = document.getElementById(input.id + '-error');
+            input.classList.add('error-input');
+            errorElement.textContent = message;
+        }
+
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', function() {
+                input.classList.remove('error-input');
+                document.getElementById(input.id + '-error').textContent = '';
+            });
+        });
+    </script>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            transition: border-color 0.3s;
-        }
-        input:focus, textarea:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-        button {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        .error {
-            color: red;
-            font-size: 0.875em;
-            margin-top: -10px;
-            margin-bottom: 10px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group.error input, .form-group.error textarea {
-            border-color: red;
-        }
-        .form-group.error label {
-            color: red;
-        }
-    </style>
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Contact Us</h1>
-    <form id="contactForm">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <span class="error" id="nameError"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <span class="error" id="emailError"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required>
-            <span class="error" id="phoneError"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <span class="error" id="messageError"></span>
-        </div>
-
+    <form id="checkoutForm" onsubmit="return validateForm()">
+        <h2>Checkout Form</h2>
+        
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+        
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" name="zip" required>
+        
+        <label for="cardName">Name on Card:</label>
+        <input type="text" id="cardName" name="cardName" required>
+        
+        <label for="cardNumber">Credit Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+        
+        <label for="expDate">Expiration Date (MM/YY):</label>
+        <input type="text" id="expDate" name="expDate" required>
+        
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        
         <button type="submit">Submit</button>
     </form>
-
+    
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            let valid = true;
+        function validateForm() {
+    // Get form elements
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const state = document.getElementById('state').value;
+    const zip = document.getElementById('zip').value;
+    const cardName = document.getElementById('cardName').value;
+    const cardNumber = document.getElementById('cardNumber').value;
+    const expDate = document.getElementById('expDate').value;
+    const cvv = document.getElementById('cvv').value;
 
-            // Clear previous errors
-            const formGroups = document.querySelectorAll('.form-group');
-            formGroups.forEach(group => {
-                group.classList.remove('error');
-            });
-            document.getElementById('nameError').textContent = '';
-            document.getElementById('emailError').textContent = '';
-            document.getElementById('phoneError').textContent = '';
-            document.getElementById('messageError').textContent = '';
+    // Validation regex patterns
+    const namePattern = /^[a-zA-Z\s]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const phonePattern = /^\d{10}$/;
+    const zipPattern = /^\d{5}$/;
+    const cardNumberPattern = /^\d{16}$/;
+    const expDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    const cvvPattern = /^\d{3}$/;
 
-            // Name validation
-            const name = document.getElementById('name').value;
-            if (!/^[a-zA-Z\s]+$/.test(name)) {
-                document.getElementById('nameError').textContent = 'Name must contain only alphabets and spaces.';
-                document.getElementById('name').closest('.form-group').classList.add('error');
-                valid = false;
-            } else if (name.length < 2 || name.length > 50) {
-                document.getElementById('nameError').textContent = 'Name must be between 2 and 50 characters.';
-                document.getElementById('name').closest('.form-group').classList.add('error');
-                valid = false;
-            }
+    // Validate fields
+    if (!namePattern.test(name)) {
+        alert("Please enter a valid name (at least 2 characters).");
+        return false;
+    }
 
-            // Email validation
-            const email = document.getElementById('email').value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
-                document.getElementById('email').closest('.form-group').classList.add('error');
-                valid = false;
-            } else if (/[<>]/.test(email)) {
-                document.getElementById('emailError').textContent = 'Email cannot contain < or > characters.';
-                document.getElementById('email').closest('.form-group').classList.add('error');
-                valid = false;
-            }
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
 
-            // Phone validation (Egyptian number)
-            const phone = document.getElementById('phone').value;
-            const egyptianPhonePattern = /^(?:\+20|0020)?1[0-9]{9}$/;
-            if (!egyptianPhonePattern.test(phone)) {
-                document.getElementById('phoneError').textContent = 'Phone number must be a valid Egyptian number starting with +20 or 0020 followed by 10 digits.';
-                document.getElementById('phone').closest('.form-group').classList.add('error');
-                valid = false;
-            }
+    if (!phonePattern.test(phone)) {
+        alert("Please enter a valid phone number (10 digits).");
+        return false;
+    }
 
-            // Message validation
-            const message = document.getElementById('message').value;
-            if (message.trim() === '') {
-                document.getElementById('messageError').textContent = 'Message cannot be empty.';
-                document.getElementById('message').closest('.form-group').classList.add('error');
-                valid = false;
-            } else if (message.length < 10 || message.length > 500) {
-                document.getElementById('messageError').textContent = 'Message must be between 10 and 500 characters.';
-                document.getElementById('message').closest('.form-group').classList.add('error');
-                valid = false;
-            } else if (/[^a-zA-Z0-9\s.,!?'"()\-]/.test(message)) {
-                document.getElementById('messageError').textContent = 'Message contains invalid characters.';
-                document.getElementById('message').closest('.form-group').classList.add('error');
-                valid = false;
-            }
+    if (address.trim() === "") {
+        alert("Please enter your address.");
+        return false;
+    }
 
-            if (valid) {
-                alert('Form submitted successfully!');
-                // Here you can add code to actually submit the form
-                // e.g., using AJAX or simply resetting the form
-                // this.submit();
-                // or
-                // document.getElementById('contactForm').reset();
-            }
-        });
+    if (city.trim() === "") {
+        alert("Please enter your city.");
+        return false;
+    }
+
+    if (state.trim() === "") {
+        alert("Please enter your state.");
+        return false;
+    }
+
+    if (!zipPattern.test(zip)) {
+        alert("Please enter a valid zip code (5 digits).");
+        return false;
+    }
+
+    if (!namePattern.test(cardName)) {
+        alert("Please enter the name on your card.");
+        return false;
+    }
+
+    if (!cardNumberPattern.test(cardNumber)) {
+        alert("Please enter a valid credit card number (16 digits).");
+        return false;
+    }
+
+    if (!expDatePattern.test(expDate)) {
+        alert("Please enter a valid expiration date (MM/YY).");
+        return false;
+    }
+
+    if (!cvvPattern.test(cvv)) {
+        alert("Please enter a valid CVV (3 digits).");
+        return false;
+    }
+
+    // If all validations pass
+    alert("Form submitted successfully!");
+    return true;
+}
+
     </script>
 </body>
 </html>
