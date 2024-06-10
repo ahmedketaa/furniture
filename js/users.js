@@ -13,7 +13,7 @@ export function loadUsers() {
     }
     return [
         { id: 1,
-         name: 'John Doe',
+         name: 'Ahmed Mostafa',
          cart: [],
          wishList: [],
          notifications: [] 

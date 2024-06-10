@@ -1,18 +1,18 @@
 // usersOperations.js
-// usersOperations.js
 import { users, saveUsers } from './users.js';
 import { products,saveProducts } from './products.js';
 import { saveOrder } from './order.js';
 
 export function addToCart(userId, productId) {
-    console.log(userId +" "+ productId)
+    console.log(userId + " " + productId)
     const user = users.find(u => u.id === userId);
-    const product = products.find(p => p.id === productId && p.status==="available");
-    console.log("test",product.status);
-    if (user && product  && !isInCart(userId, productId)) {
-        user.cart.push({ ...product, quantity: 1 });
-        saveUsers(); 
-        console.log(user.cart);
+    const product = products.find(p => p.id === productId);
+    console.log("test", product.status);
+    if (user && product && !isInCart(userId, productId)) {
+        user.cart = user.cart || []; 
+        user.cart.push({ ...product, status: 'pending' });
+        saveUsers();
+        
     }
 }
 // remove from cart
@@ -29,18 +29,20 @@ export function removeFromCart(userId, productId) {
 
 export function isInCart(userId, productId) {
     const user = users.find(u => u.id === userId);
-        return user && user.cart.some(p => p.id === productId);
-    
+    return user && user.cart && user.cart.some(p => p.id === productId); // Check if cart exists
 }
 export function addToWishList(userId, productId) {
     const user = users.find(u => u.id === userId);
     const product = products.find(p => p.id === productId);
     if (user && product) {
+        if (!user.wishList) user.wishList = []; // Initialize wishList if it doesn't exist
         user.wishList.push(product);
-        saveUsers(); 
+        console.log(user);
+        saveUsers();
     }
     console.log(user.wishList);
 }
+
 
 export function removeFromWishList(userId, productId) {
     const user = users.find(u => u.id === userId);
@@ -52,7 +54,7 @@ export function removeFromWishList(userId, productId) {
 
 export function isInWishlist(userId, productId) {
     const user = users.find(u => u.id === userId);
-    return user && user.wishList.some(p => p.id === productId);
+    return user && user.wishList && user.wishList.some(p => p.id === productId); // Check if wishList exists
 }
 
 export function checkout(userId) {

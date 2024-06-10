@@ -24,7 +24,7 @@ function validateFullName(inp) {
   if (emptyFullName) {
     inp.nextElementSibling.innerHTML = "Full Name is required";
   } else if (inp.value.length < 3) {
-    inp.nextElementSibling.innerHTML = "Full Name must be greaterthan 3 chars";
+    inp.nextElementSibling.innerHTML = "Full Name must be greater than 3 chars";
   } else {
     inp.nextElementSibling.innerHTML = "";
     fullNameHasError = false;

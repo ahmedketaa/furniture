@@ -23,6 +23,7 @@ export const createUser = (user) => {
   user.id = id;
 
   users.push(user);
+  console.log("test new user array ",user);
 
   localStorage.setItem("users", JSON.stringify(users));
 };

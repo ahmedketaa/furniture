@@ -1,5 +1,5 @@
 * {
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
     font-weight: 300;
     font-style: normal;
     margin: 0;
@@ -40,7 +40,6 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   height: 400px;
   width: 90%;
   margin: 80px auto 0 auto; 
@@ -49,14 +48,16 @@ header {
  .head_content{
   align-items: center;
   justify-content: center;
-  display: block;
+  display: flex;
  
  }
 
  .head_content h1{
-  text-align: center;
-  font-size: 8rem;
+ 
+  font-size: 4rem;
+  /* font-size: 3rem; */
   color: black;
+  FONT-WEIGHT: 600;;
 
 
  }
@@ -75,13 +76,14 @@ header {
 .contact_description h1{
   font-size: 3rem;
   color:black;
+  font-weight: 600;
 
 }
 
 .main_content{
   width: 50%;
   display: grid;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
 }
@@ -106,10 +108,15 @@ span{
 }
 .main_section{
   display: flex;
+  justify-content: space-evenly;
+
+
+
+}
+.main_section .box{
+  display: flex;
   justify-content: center;
-
-
-
+  align-items: center;
 }
 form {
   padding-top: 20px;
@@ -121,6 +128,7 @@ form input {
   margin: 5px 0;
   border: 1px solid #9f9f9f;
   border-radius: 4px;
+  width: 100%;
 }
 label {
   padding-top: 20px;
