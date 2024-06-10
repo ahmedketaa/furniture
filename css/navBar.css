@@ -48,8 +48,8 @@ header {
 }
 
 .navbar a {
-  color: #ab811e;
   margin: 0 10px;
+  color: black;
 }
 
 .navbar_left {
@@ -96,7 +96,6 @@ header {
 }
 
 .navbar_right a i {
-  color: #ab811e;
   font-weight: 900;
 }
 .navbar a:hover {
