@@ -81,7 +81,7 @@ header {
 .main_content{
   width: 50%;
   display: grid;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
 }
