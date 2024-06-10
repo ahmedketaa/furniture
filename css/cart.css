@@ -1,0 +1,144 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+
+body {
+    font-family: "Product Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+
+.cart {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.cart h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table tr th{
+    
+    padding: 20px;
+    background-color: palegoldenrod;
+    font-weight: 600;
+
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+}
+
+table td img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.cart-totals {
+    text-align: right;
+    line-height: 2.5;
+    display: contents;
+}
+
+
+.cart-totals h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+
+.cart-totals button {
+    width: 150px;
+    height: 50px;
+    background-color: #ab811e;
+    color: black;
+    border: solid 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+  }
+  
+.features {
+    margin: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+  }
+  .features .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+  .features .box .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .features .box .text h3{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .features .box .text i{
+    font-size: 35px;
+    color: #1A1A1A   ;
+  }
+  .features .box p{
+    line-height: 1.7;
+    text-align: center;
+    color: #777;
+  }
