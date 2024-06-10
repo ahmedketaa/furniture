@@ -27,9 +27,9 @@ body {
 }
 .container {
   width: 100%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: auto auto;
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
 }
 
 /* header {
@@ -60,15 +60,15 @@ header {
 form {
   padding-top: 20px;
   display: grid;
-  width: 80%;
-  padding-left: 50px;
+  width: 100%;
+  padding-left: 100px;
 }
 form input {
   padding: 14px;
   margin: 5px 0;
   border: 1px solid #9f9f9f;
   border-radius: 4px;
-  width: 70%;
+  width: 80%;
 }
 label {
   padding-bottom: 20px;
