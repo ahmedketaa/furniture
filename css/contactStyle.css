@@ -102,7 +102,7 @@ header {
 
 }
 
-span{
+.icon_section{
   display: flex;
   
 }
@@ -114,9 +114,9 @@ span{
 
 }
 .main_section .box{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  justify-content: space-around;
+  align-items: start;
 }
 form {
   padding-top: 20px;
