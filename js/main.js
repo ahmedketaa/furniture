@@ -11,9 +11,13 @@ const loggedUser=localStorage.getItem("loggedUser");
 const userId = JSON.parse(loggedUser).id;
 const user = users.find(u => u.id === userId);
 const userCartCount=user.cart.length;
-document.querySelectorAll(".cart_count").forEach(icon=>{
-    icon.textContent=` (${userCartCount}) `
-})
+const allCartIcons= document.querySelectorAll(".cart_count")
+function displayCartCount(){
+    allCartIcons.forEach(icon=>{
+        icon.textContent=` (${userCartCount}) `
+    })
+}
+displayCartCount();
 
 
 // Declare addToWishlist function in the global scope
@@ -112,19 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     button.style.color = "black"
                     saveUsers();
                     saveProducts();
+                    
                 } else {
                     addToCart(userId, productId); // Debugging: Check if addToCart is called
                     console.log('Added to cart');
                     console.log(isInCart(userId, productId));
-
+                   
                     button.textContent = 'Remove from Cart';
                     button.style.backgroundColor = "#b68d50"
                     button.style.color = "white"
+                  
                     saveProducts(); // Debugging: Check if saveProducts is called
                 }
+               displayCartCount();
             });
+            
         });
-
+        
     }
 
 
