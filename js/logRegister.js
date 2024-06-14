@@ -25,7 +25,7 @@ let emailHasError = true;
 let passwordHasError = true;
 let rePasswordHasError = true;
 
-/// empty inout validation
+/// empty input validation
 function validateIfInputIsEmpty(value) {
   if (!value || value === "") {
     return true;
@@ -92,8 +92,9 @@ function validateFullName(inp) {
 
   if (emptyFullName) {
     inp.nextElementSibling.innerHTML = "Full Name is required";
-  } else if (inp.value.length < 3) {
-    inp.nextElementSibling.innerHTML = "Full Name must be greater than 3 chars";
+  } else if (!inp.value.match(/[A-Z][a-z]{3,}/)) {
+    inp.nextElementSibling.innerHTML =
+      "Full name must be chars and more than 3 chars";
   } else {
     inp.nextElementSibling.innerHTML = "";
     fullNameHasError = false;
@@ -169,7 +170,7 @@ document.getElementById("register_form").addEventListener("submit", (event) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    createUser({
+    const userCreated = createUser({
       fullName,
       role: "user", // set it to admin in create admin
       email,
@@ -179,6 +180,11 @@ document.getElementById("register_form").addEventListener("submit", (event) => {
       notifications: [],
     });
 
-    window.location.href = "./logRegister.html";
+    if (!userCreated) {
+      document.getElementById("email").nextElementSibling.innerHTML =
+        "Email is already taken ";
+    } else {
+      window.location.href = "./logRegister.html";
+    }
   }
 });
