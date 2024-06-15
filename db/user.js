@@ -15,6 +15,10 @@ export const listUsers = () => {
 export const createUser = (user) => {
   const users = listUsers();
 
+  if (users.find((e) => e.email === user.email)) {
+    return false;
+  }
+
   let id = 1;
   if (users.length > 0) {
     id = users[users.length - 1].id + 1;
@@ -23,9 +27,10 @@ export const createUser = (user) => {
   user.id = id;
 
   users.push(user);
-  console.log("test new user array ",user);
+  console.log("test new user array ", user);
 
   localStorage.setItem("users", JSON.stringify(users));
+  return true;
 };
 
 export const userLogin = (loginUser) => {
