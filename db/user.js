@@ -37,7 +37,7 @@ export const userLogin = (loginUser) => {
   const users = listUsers();
 
   const existUser = users.find(function (user) {
-    return user.email === loginUser.email && user.role === "user";
+    return user.email === loginUser.email;
   });
 
   if (!existUser) {
@@ -48,10 +48,15 @@ export const userLogin = (loginUser) => {
     return false;
   }
 
-  localStorage.setItem("loggedUser", JSON.stringify(existUser));
-
-  // if user logged in remove logged admin if exists
-  localStorage.removeItem("loggedAdmin", JSON.stringify(existUser));
+  if (existUser.role === "user") {
+    localStorage.setItem("loggedUser", JSON.stringify(existUser));
+    // if user logged in remove logged admin if exists
+    localStorage.removeItem("loggedAdmin", JSON.stringify(existUser));
+  } else {
+    localStorage.setItem("loggedAdmin", JSON.stringify(existUser));
+    // if user logged in remove logged admin if exists
+    localStorage.removeItem("loggedUser", JSON.stringify(existUser));
+  }
 
   return existUser;
 };

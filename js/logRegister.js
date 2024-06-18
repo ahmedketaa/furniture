@@ -78,9 +78,9 @@ document.getElementById("login_form").addEventListener("submit", (event) => {
   if (!loginEmailHasError && !loginPasswordHasError) {
     const email = document.getElementById("login_email").value;
     const password = document.getElementById("login_password").value;
-    const loggedin = userLogin({ email, password });
+    const loggedUser = userLogin({ email, password });
 
-    if (!loggedin) {
+    if (!loggedUser) {
       document.getElementById("login_error").innerHTML = "wrong email or password";
       return;
     }
@@ -98,7 +98,11 @@ document.getElementById("login_form").addEventListener("submit", (event) => {
         icon.parentElement.style.display='none'
       })
 
-    window.location.href = "./index.html";
+      if(loggedUser.role==='user'){
+        window.location.href = "./index.html";
+      } else {
+        window.location.href = "./admin/admin.html";
+      }
           }
   }
 });
