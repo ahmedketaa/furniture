@@ -24,7 +24,7 @@
         <div class="navbar_left">
             <div class="logo_div">
                 <img src="./assets/logo.png" alt="Logo" class="logo">
-                <h3>EL-DOMIATY.</h3>
+                <h3>El Domiaty</h3>
             </div>
             <ul>
                 <li>
@@ -42,9 +42,11 @@
             </ul>
         </div>
         <div class="navbar_right">
-            <a href="cart.html"><i class="fas fa-shopping-cart"></i></i></a>
-            <a href="logRegister.html"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-bars"></i></a>
+            <a title="cart" href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart_count">(00)</span></a>
+            <a title="login / register" href="logRegister.html"><i class="fas fa-user"></i></a>
+            <a href="#" class="log_out_icon">
+                <i title="log out" style="transform: rotate(180deg); font-size: 19px;" class="fa-solid fa-right-from-bracket"></i>
+            </a>
         </div>
     </nav>
     <header>
@@ -241,7 +243,7 @@
     </footer>
     
     <script src="/js/contact.js"></script>
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/cartIconCount.js"></script>
 
 </body>
 

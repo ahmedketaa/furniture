@@ -24,12 +24,13 @@
                 <li><a href="contactUs.html">Contact Us</a></li>
             </ul>
         </div>
-        <div class="navbar-right">
-
-            <a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart_count">(00)</span></a>
-            <a href="logRegister.html"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-bars"></i></a>
-        </div>
+        <div class="navbar_right">
+            <a title="cart" href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart_count">(00)</span></a>
+            <a title="login / register" href="logRegister.html"><i class="fas fa-user"></i></a>
+            <a href="#" class="log_out_icon">
+                <i title="log out" style="transform: rotate(180deg); font-size: 19px;" class="fa-solid fa-right-from-bracket"></i>
+            </a>
+                </div>
     </nav>
     <!-- end nav -->
     <!-- search section -->
@@ -70,5 +71,7 @@
     </div>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/usersOperations.js"></script>
+    <script type="module" src="./js/cartIconCount.js"></script>
+
     </body>
 </html>

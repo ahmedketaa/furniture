@@ -3,21 +3,13 @@ import { getProductById, filterProductsBySearch } from './productOperations.js';
 import { addToCart, isInWishlist, removeFromWishList, isInCart, removeFromCart } from './usersOperations.js';
 import { products } from './products.js';
 import { saveProducts } from './products.js';
-import { saveUsers, users } from './users.js';
+import { saveUsers } from './users.js';
 import { addToWishList } from './usersOperations.js';
 import { categories, loadCategories } from './categories.js';
-
+import {displayCartCount} from './cartIconCount.js'
 const loggedUser=localStorage.getItem("loggedUser");
 const userId = JSON.parse(loggedUser).id;
-const user = users.find(u => u.id === userId);
-const userCartCount=user.cart.length;
-const allCartIcons= document.querySelectorAll(".cart_count")
-function displayCartCount(){
-    allCartIcons.forEach(icon=>{
-        icon.textContent=` (${userCartCount}) `
-    })
-}
-displayCartCount();
+
 
 
 // Declare addToWishlist function in the global scope
@@ -155,13 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
     displayCategories(categories);
     
-    // Event listener for category dropdown
-    // document.getElementById('category').addEventListener('change', (event) => {
-    //     const category = event.target.value;
-    //     const searchTerm = document.getElementById('search').value;
-    //     const filteredProducts = filterProductsByCategory(category).filter(product => category === "" || product.category === category);
-    //     renderProducts(filteredProducts);
-    // });
+  
 
     // Function to render categories in HTML
     function displayCategories(categories) {

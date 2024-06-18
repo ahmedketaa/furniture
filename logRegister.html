@@ -20,59 +20,79 @@
         <div class="navbar-left">
             <div class="logo-div">
                 <img src="./assets/logo.png" alt="Logo" class="logo">
-                <h3>EL Domayti</h3>
+                <h3>EL Domiaty</h3>
             </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Shop</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="contactUs.html">Contact Us</a></li>
             </ul>
         </div>
-        <div class="navbar-right">
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-bars"></i></a>
+        <div class="navbar_right">
+            <a title="cart" href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart_count">(00)</span></a>
+            <a title="login / register" href="logRegister.html"><i class="fas fa-user"></i></a>
+            <a href="#" class="log_out_icon">
+                <i title="log out" style="transform: rotate(180deg); font-size: 19px;" class="fa-solid fa-right-from-bracket"></i>
+            </a>
         </div>
     </nav>
     <!-- End Navbar -->
     
     <!-- Buttons for Login/Register -->
-    <div class="button-container">
-        <button id="show-login">Login</button>
-        <button id="show-register">Register</button>
-    </div>
+    <!-- <div class="button-container">
+        <button >Login</button>
+        <button >Register</button>
+    </div> -->
     
     <!-- Login/Register Forms -->
     <div class="forms-container">
         <div class="login-form visible" id="login-form">
             <form id="login_form" class="register_form" method="post">
+               <div class="cont">
                 <label>Email:</label>
                 <input type="text" id="login_email" name="email" placeholder="Enter your email">
-                <span></span><br />
+               </div>
+               
+               <div class="cont">
                 <label>Password:</label>
-                <input id="login_password" type="password" name="pword" placeholder="Enter your password">
-                <span></span><br />
-                <button type="submit" id="submit">login</button>
+                <input id="login_password" type="password" name="password" placeholder="Enter your password">
+               </div>
+                <div class="button_container">
+                    <button type="submit" id="submit">login</button>
                 <span id="login_error"></span>
+                </div>
+                <div class="dont_have_account">
+                    <p>Don't have account ? <a href="#" id="show-register">register now</a></p>
+                </div>
             </form>
         </div>
     
         <div class="register-form" id="register-form">
             <form id="register_form" class="register_form" method="post">
-                <label>Full Name:</label>
-                <input type="text" name="fName" id="fullName" placeholder="Enter your Name">
-                <span></span><br />
-                <label>Email:</label>
-                <input type="text" id="email" name="email" placeholder="Enter your email">
-                <span></span><br />
+                <div class="cont">
+                    <label>Full Name:</label>
+                    <input type="text" name="fName" id="fullName" placeholder="Enter your Name">
+                </div>
+                <div class="cont">
+                    <label>Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email">
+                </div>
+                
+              <div class="cont">
                 <label>Password:</label>
                 <input id="password" type="password" name="pword" placeholder="Enter your password">
-                <span></span><br />
-                <label>Re-Enter your Password:</label>
-                <input id="re_password" type="password" name="rePword" placeholder="Re-Enter your password">
-                <span></span><br />
-                <button type="submit">Register</button>
+              </div>
+                <div class="cont">
+                    <label>re-enter Password:</label>
+                <input id="re_password" type="password" name="rePword" placeholder="re-enter  password">
+                </div>
+                <div class="button_container">
+                    <button type="submit">Register</button>
+                </div>
+                <div class="dont_have_account">
+                    <p>Already have account ? <a href="#" id="show-login">login now</a></p>
+                </div>
             </form>
         </div>
     </div>
@@ -117,6 +137,8 @@
     <!-- End Footer -->
     
     <script src="./js/logRegister.js" type="module"></script>
+    <script type="module" src="./js/cartIconCount.js"></script>
+
 </body>
 
    

@@ -13,12 +13,15 @@ export function loadUsers() {
     }
     return [
         { id: 1,
-         name: 'Ahmed Mostafa',
+         fullName: 'Ahmed Mostafa',
+         email:'andf.750@gmail.com',
+         password:'123123',
+         role: "user",
          cart: [],
          wishList: [],
          notifications: [] 
 
         },
-        // Add more default users here if needed
+        
     ];
 }
