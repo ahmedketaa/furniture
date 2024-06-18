@@ -101,17 +101,37 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 160px); /* Adjusted to fit the buttons */
+    height: calc(100vh - 160px); 
 }
 
 .login-form,
 .register-form {
     display: none;
     flex-direction: column;
+    background-color: #fff;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+form .button_container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form .button_container button{
+    width: 30%;
 }
 
 .login-form.visible,
@@ -132,6 +152,12 @@ a {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 70%;
+    font-size: 15px;
+}
+input:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(151, 126, 2, 0.5);
 }
 
 .login-form button,
@@ -145,6 +171,9 @@ a {
 .login-form button:hover,
 .register-form button:hover {
     background-color: #8a6d00;
+}
+.dont_have_account a{
+    text-decoration: underline;
 }
 
 /* Footer Styles */
@@ -228,4 +257,10 @@ a {
     padding-top: 20px;
     color: #777;
     font-size: 14px;
+}
+.cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
 }
