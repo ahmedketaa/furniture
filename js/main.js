@@ -8,8 +8,9 @@ import { addToWishList } from './usersOperations.js';
 import { categories, loadCategories } from './categories.js';
 import {displayCartCount} from './cartIconCount.js'
 const loggedUser=localStorage.getItem("loggedUser");
-const userId = JSON.parse(loggedUser).id;
-
+if(loggedUser){
+var userId = JSON.parse(loggedUser).id;
+}
 
 
 // Declare addToWishlist function in the global scope
