@@ -35,7 +35,7 @@ export function addToWishList(userId, productId) {
     const user = users.find(u => u.id === userId);
     const product = products.find(p => p.id === productId);
     if (user && product) {
-        if (!user.wishList) user.wishList = []; // Initialize wishList if it doesn't exist
+        if (!user.wishList) user.wishList = []; 
         user.wishList.push(product);
         console.log(user);
         saveUsers();
@@ -110,7 +110,12 @@ export function userIsLogged() {
 // logout function
 export function logOut(){
     localStorage.removeItem("loggedUser")
-    window.location.href = "./products.html"
+    // this line to remove logout icon from navbar
+    const logOutIcon=document.querySelectorAll(".log_out_icon");
+    logOutIcon.forEach(icon=>{
+      icon.style.display="none"
+    });
+    window.location.href = "./index.html";
 }
 
 
@@ -141,7 +146,7 @@ export function placeOrder(userId,data){
         }
 
         const order = {
-            staus:"pending",
+            status:"pending",
             userId,
             products:userCart,
             totalPrice,

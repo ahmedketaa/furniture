@@ -25,7 +25,7 @@ let emailHasError = true;
 let passwordHasError = true;
 let rePasswordHasError = true;
 
-/// empty inout validation
+/// empty input validation
 function validateIfInputIsEmpty(value) {
   if (!value || value === "") {
     return true;
@@ -45,7 +45,7 @@ function validateLoginEmail(inp) {
   ) {
     inp.nextElementSibling.innerHTML = "Email is invalid";
   } else {
-    inp.nextElementSibling.innerHTML = "";
+    // inp.nextElementSibling.innerHTML = "";
     loginEmailHasError = false;
   }
 }
@@ -58,7 +58,7 @@ function validateLoginPassword(inp) {
   if (emptyPassword) {
     inp.nextElementSibling.innerHTML = "Password is required";
   } else {
-    inp.nextElementSibling.innerHTML = "";
+    // inp.nextElementSibling.innerHTML = "";
     loginPasswordHasError = false;
   }
 }
@@ -66,10 +66,12 @@ function validateLoginPassword(inp) {
 document.getElementById("login_email").addEventListener("blur", (event) => {
   validateLoginEmail(event.target);
 });
-
 document.getElementById("login_password").addEventListener("blur", (event) => {
   validateLoginPassword(event.target);
 });
+
+
+// handle login form
 
 document.getElementById("login_form").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -79,11 +81,25 @@ document.getElementById("login_form").addEventListener("submit", (event) => {
     const loggedin = userLogin({ email, password });
 
     if (!loggedin) {
-      document.getElementById("login_error").innerHTML = "wrong credetials";
+      document.getElementById("login_error").innerHTML = "wrong email or password";
       return;
     }
+        // this line to display logout icon from navbar
+      else{
 
-    window.location.href = "./products.html";
+      
+      const logOutIcon=document.querySelectorAll(".log_out_icon");
+      logOutIcon.forEach(icon=>{
+        icon.style.display="block"
+      });
+
+      const loginIcon=document.querySelectorAll(".fa-user");
+      loginIcon.forEach(icon=>{
+        icon.parentElement.style.display='none'
+      })
+
+    window.location.href = "./index.html";
+          }
   }
 });
 
@@ -92,8 +108,9 @@ function validateFullName(inp) {
 
   if (emptyFullName) {
     inp.nextElementSibling.innerHTML = "Full Name is required";
-  } else if (inp.value.length < 3) {
-    inp.nextElementSibling.innerHTML = "Full Name must be greater than 3 chars";
+  } else if (!inp.value.match(/[A-Z][a-z]{3,}/)) {
+    inp.nextElementSibling.innerHTML =
+      "Full name must be chars and more than 3 chars";
   } else {
     inp.nextElementSibling.innerHTML = "";
     fullNameHasError = false;
@@ -169,9 +186,9 @@ document.getElementById("register_form").addEventListener("submit", (event) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    createUser({
+    const userCreated = createUser({
       fullName,
-      role: "user", // set it to admin in create admin
+      role: "user", 
       email,
       password,
       cart: [],
@@ -179,6 +196,11 @@ document.getElementById("register_form").addEventListener("submit", (event) => {
       notifications: [],
     });
 
-    window.location.href = "./logRegister.html";
+    if (!userCreated) {
+      document.getElementById("email").nextElementSibling.innerHTML =
+        "Email is already taken ";
+    } else {
+      window.location.href = "./logRegister.html";
+    }
   }
 });

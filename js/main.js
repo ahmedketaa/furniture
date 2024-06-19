@@ -3,17 +3,13 @@ import { getProductById, filterProductsBySearch } from './productOperations.js';
 import { addToCart, isInWishlist, removeFromWishList, isInCart, removeFromCart } from './usersOperations.js';
 import { products } from './products.js';
 import { saveProducts } from './products.js';
-import { saveUsers, users } from './users.js';
+import { saveUsers } from './users.js';
 import { addToWishList } from './usersOperations.js';
 import { categories, loadCategories } from './categories.js';
-
+import {displayCartCount} from './cartIconCount.js'
 const loggedUser=localStorage.getItem("loggedUser");
 const userId = JSON.parse(loggedUser).id;
-const user = users.find(u => u.id === userId);
-const userCartCount=user.cart.length;
-document.querySelectorAll(".cart_count").forEach(icon=>{
-    icon.textContent=` (${userCartCount}) `
-})
+
 
 
 // Declare addToWishlist function in the global scope
@@ -112,19 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     button.style.color = "black"
                     saveUsers();
                     saveProducts();
+                    
                 } else {
                     addToCart(userId, productId); // Debugging: Check if addToCart is called
                     console.log('Added to cart');
                     console.log(isInCart(userId, productId));
-
+                   
                     button.textContent = 'Remove from Cart';
                     button.style.backgroundColor = "#b68d50"
                     button.style.color = "white"
+                  
                     saveProducts(); // Debugging: Check if saveProducts is called
                 }
+               displayCartCount();
             });
+            
         });
-
+        
     }
 
 
@@ -147,13 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
     displayCategories(categories);
     
-    // Event listener for category dropdown
-    // document.getElementById('category').addEventListener('change', (event) => {
-    //     const category = event.target.value;
-    //     const searchTerm = document.getElementById('search').value;
-    //     const filteredProducts = filterProductsByCategory(category).filter(product => category === "" || product.category === category);
-    //     renderProducts(filteredProducts);
-    // });
+  
 
     // Function to render categories in HTML
     function displayCategories(categories) {

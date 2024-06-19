@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     text-transform: capitalize;
+    
   }
   
   * {
@@ -57,7 +58,7 @@ header {
     color: #aaa;
 }
 
-table {
+/* table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -75,7 +76,7 @@ table th, table td {
     border: none;
 }
 
-table td img {
+.cart-container td img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
@@ -105,7 +106,7 @@ table td img {
     border-radius: 10px;
     cursor: pointer;
     
-  }
+  } */
   
 .features {
     margin: 100px 0;

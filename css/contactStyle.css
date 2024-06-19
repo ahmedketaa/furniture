@@ -1,31 +1,31 @@
 * {
-    /* font-family: "Poppins", sans-serif; */
-    font-weight: 300;
-    font-style: normal;
-    margin: 0;
-    padding: 0;
-    text-transform: capitalize;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Product Sans", sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    color: black;
-    background-color: #fff;
-    display: grid;
+   font-family: "Poppins", sans-serif; 
+  font-weight: 300;
+  font-style: normal;
 
-  }
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Product Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: black;
+  background-color: #fff;
+  display: grid;
+}
 
 /* header{
   background-image: url(/assets/Rectangle\ 57.png);
@@ -36,89 +36,138 @@
   height: 40vh;
  } */
 header {
-  background-image: url('../assets/Rectangle\ 57.png');
+  background-image: url("../assets/Rectangle\ 57.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 400px;
   width: 90%;
-  margin: 80px auto 0 auto; 
+  margin: 80px auto 0 auto;
   position: relative;
 }
- .head_content{
+.head_content {
   align-items: center;
   justify-content: center;
   display: flex;
- 
- }
+}
 
- .head_content h1{
- 
+.head_content h1 {
   font-size: 4rem;
   /* font-size: 3rem; */
   color: black;
-  FONT-WEIGHT: 600;;
+  font-weight: 600;
+}
 
-
- }
-
- .contact_description{
+.contact_description {
   color: black;
   text-align: center;
   padding: 20px;
-
- }
- .contact_description p{
+}
+.contact_description p {
   font-size: 1rem;
-  color: #9F9F9F;
- }
+  color: #9f9f9f;
+}
 
-.contact_description h1{
+.contact_description h1 {
   font-size: 3rem;
-  color:black;
+  color: black;
   font-weight: 600;
-
 }
 
-.main_content{
-  width: 50%;
-  display: grid;
-  justify-content: space-evenly;
+.main_content {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-
+  flex-direction: column;
 }
 
-.main_content h3{
-
+.main_content h3 {
   padding-left: 20px;
   font-size: 1.5rem;
-  color:black;
+  color: black;
   font-weight: bold;
-
 }
-.main_content p{
+.main_content p {
   padding-left: 20px;
   font-size: 0.8rem;
-
 }
 
-.icon_section{
+.icon_section {
   display: flex;
-  
 }
-.main_section{
+.main_section {
   display: flex;
   justify-content: space-evenly;
-
-
-
-}
-.main_section .box{
-  display: grid;
-  justify-content: space-around;
-  align-items: start;
 }
 form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+ 
+}
+form label {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+form input {
+  padding: 16px;
+  border: 1px solid #9f9f9f;
+  border-radius: 4px;
+  width: 100%;
+
+}
+form h1 {
+  margin: 0;
+  font-size: xx-large;
+  padding-bottom: 30px;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(151, 126, 2, 0.5);
+}
+
+form button {
+  justify-content: center;
+  display: grid;
+  align-items: center;
+
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border: solid 1px;
+  border-radius: 10px;
+  cursor: pointer;
+ 
+}
+form button :hover {
+  background-color: rgb(245, 180, 16, 0.5);
+  border: 0.5px dotted;
+}
+form button  :active {
+  background-color: rgb(245, 180, 16, 0.5);
+}
+form button  :focus {
+  background-color: rgb(245, 180, 16, 0.5);
+}
+/* form button:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 5px rgba(151, 126, 2, 0.5);
+}
+
+form button:focus {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 5px rgba(151, 126, 2, 0.5);
+}
+
+form button:disabled {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 5px rgba(151, 126, 2, 0.5);
+  background-color: #8b6d3f;
+  color: white;
+  cursor: not-allowed;
+} */
+
+/* form {
   padding-top: 20px;
   display: grid;
   width: 100%;
@@ -138,8 +187,8 @@ form h1 {
   margin: 0;
   font-size: xx-large;
   padding-bottom: 30px;
-}
-#message{
+} */
+#message {
   border-radius: 4px;
 }
 
@@ -151,7 +200,8 @@ button {
   border: solid 1px;
   border-radius: 10px;
   cursor: pointer;
-  
+  text-align: center;
+  margin: auto;
 }
 
 button:hover {
@@ -163,6 +213,9 @@ button:active {
 }
 button:focus {
   background-color: rgb(245, 180, 16, 0.5);
+}
+.btn_style{
+  padding: 20px;
 }
 /* .down_bar_section {
   background-image: url("/assets/Rectangle11.png");
@@ -183,7 +236,8 @@ button:focus {
 .icon_details {
   padding-left: 10px;
 }
-.form-group.error input, .form-group.error textarea {
+.form-group.error input,
+.form-group.error textarea {
   border-color: red;
 }
 .form-group.error label {
@@ -196,7 +250,8 @@ button:focus {
   margin-top: -10px;
   margin-bottom: 10px;
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-color: #ab811e;
   outline: none;
   box-shadow: 0 0 5px #ab811e;
@@ -210,7 +265,7 @@ input:focus, textarea:focus {
   gap: 15px;
   padding: 0 20px;
 }
-.features .box{
+.features .box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,21 +273,21 @@ input:focus, textarea:focus {
   gap: 15px;
   text-align: center;
 }
-.features .box .text{
+.features .box .text {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
-.features .box .text h3{
+.features .box .text h3 {
   font-size: 18px;
   font-weight: bold;
 }
-.features .box .text i{
+.features .box .text i {
   font-size: 35px;
-  color: #1A1A1A   ;
+  color: #1a1a1a;
 }
-.features .box p{
+.features .box p {
   line-height: 1.7;
   text-align: center;
   color: #777;
