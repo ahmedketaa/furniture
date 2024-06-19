@@ -1,0 +1,146 @@
+
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  
+}
+
+.container{
+  display: flex;
+  justify-content:space-between;
+  height: 70vh;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+}
+
+#remove-button{
+  background-color: transparent;
+  border: none;
+cursor: pointer;
+
+
+}
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+} */
+
+
+.logo h1 {
+  margin: 0;
+}
+
+main {
+  margin: auto;
+  display: flex;
+  /* justify-content: space-evenly; */
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.icons a {
+  margin-left: 15px;
+}
+
+.cart-container {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 50vh;
+  width: 100%;
+}
+
+
+
+.cart-container table {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 40px;
+}
+
+.cart-container table th,
+.cart-container table td {
+  padding: 30px;
+  text-align: center;
+
+}
+.cart-container table th {
+  background-color: #F9F1E7;
+  padding: 20px;
+  font-weight: 700;
+}
+
+.cart-container table img {
+  width: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.cart-container table input {
+  width: 35px;
+  height: 30px;
+  border: 1px solid #9F9F9F;
+border-radius: 5px;
+  
+}
+
+.cart-totals {
+  display: grid;
+  width: 300px;
+  padding: 20px;
+  background-color: #F9F1E7;
+  height: 50vh;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.cart-totals p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.cart-totals button {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  color: black;
+  border: solid 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  
+
+}
+
+.cart-totals button :hover {
+  background-color: rgb(245, 180, 16, 0.5);
+  border: 0.5px dotted;
+}
+.cart-totals button :active {
+  background-color: rgb(245, 180, 16, 0.5);
+}
+.cart-totals button :focus {
+  background-color: rgb(245, 180, 16, 0.5);
+}
+
+.total_container{
+  margin: auto;
+  padding: 20px;
+    
+ 
+}
