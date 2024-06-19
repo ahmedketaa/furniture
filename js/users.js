@@ -6,6 +6,7 @@ export function saveUsers() {
     console.log('Users saved');
 }
 
+
 export function loadUsers() {
     const usersJSON = localStorage.getItem('users');
     if (usersJSON) {
