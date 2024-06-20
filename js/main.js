@@ -12,6 +12,7 @@ import {displayCartCount} from './cartIconCount.js'
     var userId = JSON.parse(loggedUser).id;
     }
 
+
 // Declare addToWishlist function in the global scope
 window.addToWishlist = function (userId, productId) {
     console.log(productId);
