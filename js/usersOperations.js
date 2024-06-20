@@ -22,6 +22,7 @@ export function removeFromCart(userId, productId) {
     if (user) {
         user.cart = user.cart.filter(p => p.id !== productId);
         saveUsers(); 
+        alert("Item removed Successfully")
         console.log(user.cart);
     }
 }
@@ -33,14 +34,16 @@ export function isInCart(userId, productId) {
 }
 export function addToWishList(userId, productId) {
     const user = users.find(u => u.id === userId);
+    console.log("user: ",user);
     const product = products.find(p => p.id === productId);
+    console.log("product: ",product);
     if (user && product) {
         if (!user.wishList) user.wishList = []; 
         user.wishList.push(product);
         console.log(user);
         saveUsers();
     }
-    console.log(user.wishList);
+    console.log(user?.wishList);
 }
 
 
@@ -57,18 +60,6 @@ export function isInWishlist(userId, productId) {
     return user && user.wishList && user.wishList.some(p => p.id === productId); // Check if wishList exists
 }
 
-export function checkout(userId) {
-    const user = users.find(u => u.id === userId);
-    if (user) {
-        user.cart.forEach(product => {
-            const index = products.findIndex(p => p.id === product.id);
-            if (index !== -1) {
-                products[index].status = 'pending';
-            }
-        });
-        saveProducts();
-    }
-}
 
 export function getUserCarts(userId) {
     const user = users.find(u => u.id === userId);
@@ -132,30 +123,39 @@ export function updateQuantityInCart(productId , userId, quantity){
     saveUsers()
 }
 
-export function placeOrder(userId,data){
-    let user = users.find((user)=>user.id===userId)
+    export function placeOrder(userId, data) {
+    let user = users.find(user => user.id === userId);
 
-    if(user && user.cart.length > 0){
-        let userCart = user.cart
-        let totalPrice = 0
+    if (user && user.cart.length > 0) {
+        let userCart = user.cart;
+        let totalPrice = 0;
 
-        for(var i=0 ; i<userCart.length;i++){
-           let price = userCart[i].price
-           let quantity = userCart[i].quantity
-           totalPrice = (price*quantity)+totalPrice
+        for (let i = 0; i < userCart.length; i++) {
+            let price = userCart[i].price;
+            let quantity = userCart[i].quantity;
+            totalPrice = (price * quantity) + totalPrice;
         }
+
+        const orderProducts = userCart.map(item => ({
+            productId: item.id,
+            quantity: item.quantity,
+            price: item.price,
+            subtotal: item.price * item.quantity,
+            ...data
+        }));
 
         const order = {
-            status:"pending",
+            status: "pending",
             userId,
-            products:userCart,
+            products: orderProducts,
             totalPrice,
             ...data
-        }
+        };
 
-        saveOrder(order)
-        user.cart=[]
-        saveUsers()
+
+        saveOrder(order);
+        console.log(order);
+        user.cart = [];
+        saveUsers();
     }
-
 }

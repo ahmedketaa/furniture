@@ -111,6 +111,7 @@ body, html {
     max-width: 300px;
     border-radius: 8px;
     transition: .3s;
+    max-height: 200px;
   }
   .product:hover  .image img{
     transform: scale(1.01);
@@ -241,6 +242,7 @@ input[type="text"]:focus, select:focus {
   }
   .details_container img{
     transition: .3s;
+    max-height: 300px;
   }
   .details_container .product_price ,.product_category{
     display: flex;

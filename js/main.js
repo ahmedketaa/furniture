@@ -3,14 +3,14 @@ import { getProductById, filterProductsBySearch } from './productOperations.js';
 import { addToCart, isInWishlist, removeFromWishList, isInCart, removeFromCart } from './usersOperations.js';
 import { products } from './products.js';
 import { saveProducts } from './products.js';
-import { saveUsers } from './users.js';
+import { saveUsers, users } from './users.js';
 import { addToWishList } from './usersOperations.js';
 import { categories, loadCategories } from './categories.js';
 import {displayCartCount} from './cartIconCount.js'
-const loggedUser=localStorage.getItem("loggedUser");
-if(loggedUser){
-var userId = JSON.parse(loggedUser).id;
-}
+    const loggedUser=localStorage.getItem("loggedUser");
+    if(loggedUser){
+    var userId = JSON.parse(loggedUser).id;
+    }
 
 
 // Declare addToWishlist function in the global scope
@@ -59,12 +59,11 @@ window.displayProductDetails = function displayProductDetails(productId) {
 }
 document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products_container');
-
+    
     // Function to render products
     function renderProducts(products) {
         productsContainer.innerHTML = '';
         let cartona = '';
-
 
         for (let i = 0; i < products.length; i++) {
             cartona += `
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             `;
         }
-    
         productsContainer.innerHTML = cartona;
         setTimeout(() => {
             document.querySelectorAll('.product').forEach((product, index) => {
@@ -111,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     saveProducts();
                     
                 } else {
-                    addToCart(userId, productId); // Debugging: Check if addToCart is called
+                    addToCart(userId, productId); 
                     console.log('Added to cart');
                     console.log(isInCart(userId, productId));
                    
@@ -119,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     button.style.backgroundColor = "#b68d50"
                     button.style.color = "white"
                   
-                    saveProducts(); // Debugging: Check if saveProducts is called
+                    saveProducts(); 
                 }
                displayCartCount();
             });
@@ -132,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to display latest products
   
 
-    // Event listener for category filter
     function filterAndRenderProducts() {
         const searchTerm = document.getElementById('search').value;
         const category = document.getElementById('category').value;
@@ -152,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to render categories in HTML
     function displayCategories(categories) {
-        console.log(categories);
+        console.log("categories ",categories);
         let cartona=''
         categories.forEach(category => {
             cartona += `
@@ -171,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     window.displayAllProducts = function displayAllProducts() {
         renderProducts(products);
+        console.log("products: ", products);
     }
      displayAllProducts();
 });

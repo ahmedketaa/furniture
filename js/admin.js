@@ -4,8 +4,7 @@ import { openModal ,closeModal} from './openModal.js';
 import { closeCategoryModal, openCategoryModal } from './categoryModal.js';
 import { categories, saveCategories } from './categories.js';
 import { addCategory, getCategoryById, updateCategory } from './categoryOperations.js';
-import { getCartByStatus } from './usersOperations.js';
-// import {displayAllProducts} from './productOperations.js'
+
 document.addEventListener('DOMContentLoaded', () => {
   // Load products and users
   const loadedProducts = loadProducts();
@@ -13,8 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   displayProducts(loadedProducts);
     const totalProducts= products.length;
     const usersCount=users.length;
+    const categoryCount=categories.length
     document.getElementById("productsCount").textContent=totalProducts;
-    document.getElementById("userCount").textContent=usersCount
+    document.getElementById("userCount").textContent=usersCount;
+    document.getElementById("categoriesCount").textContent=categoryCount;
+
   // Display users
 //   displayUsers(users);
 
@@ -172,13 +174,11 @@ window.deleteUser = function(userId) {
     }
   };
 
-// handle category operations
+// clear category 
 function clearCategoryForm() {
     document.getElementById('categoryId').value = '';
     document.getElementById('categoryName').value = '';
 }
-
-// Function to handle editing category
 
 
 // Function to handle deleting category
@@ -187,8 +187,8 @@ window.deleteCategory = function(categoryId) {
         const categoryIndex = categories.findIndex(category => category.id === categoryId);
         if (categoryIndex > -1) {
             categories.splice(categoryIndex, 1);
-            saveCategories(); // Save categories after deletion
-            displayCategoriesAdmin(categories); // Refresh the list
+            saveCategories(); 
+            displayCategoriesAdmin(categories); 
         }
     }
 }
@@ -250,31 +250,42 @@ function displayCategoriesAdmin(categories) {
 document.getElementById("categoryList").addEventListener('click',function(){
     displayCategoriesAdmin(categories);
 })
+// get user name
+ function getUserName(userId){
+  const user= users.find(u=>u.id===userId);
+  var userName =user?.fullName
+  return userName
 
+}
 // handle pending orders
-// window.getCartByStatus=function (userId, "available"){
-//     console.log(userId,"available");
-// }
-// getCartByStatus()
-const currentUserId=localStorage.getItem("loggedUser")
-const pendingOrders = getCartByStatus(JSON.parse(currentUserId).id, 'pending');
+
+const pendingOrders = JSON.parse(localStorage.getItem("orders"))
+console.log(pendingOrders);
+document.getElementById("pendingCount").textContent=pendingOrders?pendingOrders.length:"00"
 
 function renderPendingOrders(pendingOrders) {
     let cartona = ''; // Clear previous orders
 
     pendingOrders.forEach(order => {
+  
+      const dateObject = new Date(order.date);
+   
         cartona += `
           <div class="user-box">
             <div>Order ID: ${order.id}</div>
-            <div>Product: ${order.name}</div>
-            <div>Price: ${order.price}</div>
-            <div>Status: ${order.status}</div>
+            <div>Products: ${order?.products?.length}</div>
+            <div>Price: ${order.totalPrice?order.totalPrice:"0"} $</div>
+            <div style=${order.status==="accepted"? "color:green;":"color:orange"}>Status: ${order.status}</div>
+             <div>User Name : ${getUserName(order.userId)}</div>
+            <div>Created At: ${dateObject.getDate()}-${dateObject.getMonth() + 1}-${dateObject.getFullYear()}</div>
+            <div>At: ${dateObject.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}).slice(0, -3)}</div>
             <div class="buttons_container">
-            <button  class="edit_button"  onclick="confirmOrder(${order.id})">Confirm</button>
+            <button  class="edit_button"  onclick="acceptOrder(${order.id})">Confirm</button>
             <button class="delete_button" onclick="rejectOrder(${order.id})">Reject</button>
             </div>
             </div>
         `;
+
         document.getElementById("prodId").innerHTML=cartona;
     });
 }
@@ -284,3 +295,45 @@ document.getElementById("pendingOrders").addEventListener('click',function(){
     renderPendingOrders(pendingOrders);
 })
 
+// order confirmation
+
+window.acceptOrder=function acceptOrder(orderId) {
+  const orderIndex = pendingOrders.findIndex(order => order.id === orderId);
+
+  if (orderIndex !== -1) { 
+    pendingOrders[orderIndex].status = "accepted";
+    localStorage.setItem("orders",JSON.stringify(pendingOrders))
+    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+            const notification = {
+                id: Date.now(), 
+                message: `Your order of Id ${orderId} has been accepted.`,
+                date: new Date().toISOString()
+            };
+    
+            loggedUser.notifications.push(notification);
+    renderPendingOrders(pendingOrders);
+
+  } else {
+    console.error(`Order with ID ${orderId} not found.`);
+  }
+}
+
+
+// Function to reject an order
+window.rejectOrder=function (orderId) {
+  const orderIndex = pendingOrders.findIndex(order => order.id === orderId);
+  if (orderIndex !== -1) {
+    pendingOrders[orderIndex].status = "rejected";
+    localStorage.setItem("orders",JSON.stringify(pendingOrders));
+    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+            const notification = {
+                id: Date.now(), 
+                message: `Your order of Id ${orderId} has been accepted.`,
+                date: new Date().toISOString()
+            };
+            loggedUser.notifications.push(notification);
+    renderPendingOrders(pendingOrders);
+    } else {
+    console.error(`Order with ID ${orderId} not found.`);
+  }
+}

@@ -45,7 +45,7 @@ function validateLoginEmail(inp) {
   ) {
     inp.nextElementSibling.innerHTML = "Email is invalid";
   } else {
-    // inp.nextElementSibling.innerHTML = "";
+    inp.nextElementSibling.innerHTML = "";
     loginEmailHasError = false;
   }
 }

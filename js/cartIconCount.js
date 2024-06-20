@@ -9,7 +9,7 @@ const userCartCount=user?.cart?.length;
 const allCartIcons= document.querySelectorAll(".cart_count")
 export function displayCartCount(){
     allCartIcons.forEach(icon=>{
-        icon.textContent=` (${userCartCount}) `
+        icon.textContent=` (${userCartCount?userCartCount: '0'}) `
     })
 }
 
