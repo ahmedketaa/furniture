@@ -266,7 +266,7 @@ document.getElementById("pendingCount").textContent=pendingOrders?pendingOrders.
 function renderPendingOrders(pendingOrders) {
     let cartona = ''; // Clear previous orders
 
-    pendingOrders.forEach(order => {
+    pendingOrders?.forEach(order => {
   
       const dateObject = new Date(order.date);
    
