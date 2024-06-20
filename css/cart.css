@@ -52,12 +52,60 @@ header {
     margin-bottom: 10px;
     
 }
-
+table{
+  overflow: scroll;
+}
 .breadcrumb {
     margin-bottom: 20px;
     color: #aaa;
 }
+.cart-container{
+  height: 400px;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+}
+.cart-container::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 8px;
+}
 
+/* For Firefox */
+.cart-container {
+  scrollbar-width:thin;
+  scrollbar-color: #e4b275 #f1f1f1;
+  
+}
+.subNav{
+  margin: 50px auto 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subNav ul{
+  display: flex;
+  gap: 10px;
+}
+.subNav ul li{
+  padding: 10px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #e4b275;
+  transition: .3s;
+}
+.subNav ul li:hover{
+  color: #aaa;
+}
+.subNav .specialLi{
+  color: #aaa;
+}
+
+
+td{
+  text-align: center;
+}
 /* table {
     width: 100%;
     border-collapse: collapse;

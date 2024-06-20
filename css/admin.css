@@ -1,7 +1,8 @@
 /* Googlefont Poppins CDN Link */
-:root{
-  --main-color:#194E48;
-  --main-color-alt:#6B8986;
+:root{  
+  /* F9F1E7   74653f*/
+  --main-color:#7b7b72;
+  --main-color-alt:#aca588;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -18,6 +19,8 @@
   width: 240px;
   background: var(--main-color);
   transition: all 0.5s ease;
+  box-shadow: 10px 10px 10px  10px  #ece9e9;
+
 }
 .sidebar.active{
   width: 60px;

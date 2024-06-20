@@ -86,8 +86,13 @@ main {
   vertical-align: middle;
   border-radius: 5px;
 }
-
+.remove-button{
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
 .cart-container table input {
+  text-align: center;
   width: 35px;
   height: 30px;
   border: 1px solid #9F9F9F;

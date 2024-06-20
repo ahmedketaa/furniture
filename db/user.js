@@ -1,15 +1,16 @@
 /// function to get list of users
 export const listUsers = () => {
   let users = localStorage.getItem("users");
-
+  console.log("db users: ",users);
   if (!users) {
-    users = []; ///return empty array
+    users = []; //
   } else {
     users = JSON.parse(users);
   }
 
   return users;
 };
+
 
 // for create user & admin by sending role with user object from outside the function
 export const createUser = (user) => {
@@ -30,6 +31,7 @@ export const createUser = (user) => {
   console.log("test new user array ", user);
 
   localStorage.setItem("users", JSON.stringify(users));
+  saveUsers()
   return true;
 };
 

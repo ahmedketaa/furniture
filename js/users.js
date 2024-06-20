@@ -14,9 +14,9 @@ export function loadUsers() {
     }
     return [
         { id: 1,
-         fullName: 'Ahmed Mostafa',
+         fullName: 'AhmedMostafa',
          email:'andf.750@gmail.com',
-         password:'123123',
+         password:'aa123123',
          role: "user",
          cart: [],
          wishList: [],
